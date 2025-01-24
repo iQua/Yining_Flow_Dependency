@@ -5,7 +5,7 @@ from typing import List
 import numpy as np
 import cvxpy as cp
 import time
-print(cp.installed_solvers())
+#print(cp.installed_solvers())
 
 from generic import (
     BaseContainer,
@@ -86,9 +86,8 @@ def flow_chunk_optimization(
                             link_constraint_check_list[key2].append(key1 + (part,))
                         else:
                             link_constraint_check_list[key2].append(key1 + (part,))
-    print(f"link constraint list:{link_constraint_check_list}")
-    exit()
-    # print(f"x example:{x[(1,1,1,4,0,1)]}")
+
+    #print(f"x example:{x[(1,1,1,4,0,1)]}")
     # 3. Objective function: min sum(T_k), where T_k >=X(k, n, i, j , p) for all n, i, j, p
     T = {} # Construct a set of helper variables (T_k >= 第k个collective里最后被发出去的流的时间)
     for k_idx in range(K):
@@ -114,15 +113,15 @@ def flow_chunk_optimization(
         if o == 0:
             current_order = 0
             current_k, current_n = k, n
-            # current_dependency_var = x[(k, n, i, j, o, p)] #Dependence constraint: 0先走 1后走
-            current_dependency_var = x[(k, n, i, j, o, 1)] #Dependence constraint: 1先走 0后走
+            current_dependency_var = x[(k, n, i, j, o, p)] #Dependence constraint: 0先走 1后走
+            # current_dependency_var = x[(k, n, i, j, o, 1)] #Dependence constraint: 1先走 0后走
 
         if o > current_order:
             print("now k,n,i,j,p:", (k,n,i,j,o,p))
             if k == current_k and n == current_n:
-                #constraints.append(x_var >= current_dependency_var + 1) # Dependence constraint: 0先走1后走
+                constraints.append(x_var >= current_dependency_var + 1) # Dependence constraint: 0先走1后走
                 #print(current_dependency_var, x_var)
-                constraints.append(x_var + 1 <= current_dependency_var) # Dependence constraint, 1先走0后走
+                # constraints.append(x_var + 1 <= current_dependency_var) # Dependence constraint, 1先走0后走
 
                 if (k, n, i, j, o, p+1) not in x:
                     current_order = o
@@ -132,9 +131,9 @@ def flow_chunk_optimization(
     # Solve
     prob = cp.Problem(objective, constraints)
     logging.info("-----> Building MILP for chunk-based scheduling done, start solving...")
-    solver_name = opt_config.get("solver", "ECOS")  # 可以换成"CBC"或者"GLPK_MI"啥的(?
-    prob.solve(solver=solver_name)
-    # prob.solve()
+    solver_name = opt_config.get("solver", "HIGHS")  # 可以换成"CBC"或者"GLPK_MI"啥的(?
+    # prob.solve(solver=solver_name)
+    prob.solve()
     if prob.status == cp.OPTIMAL:
         print("\n========= 变量解 =========")
     for (k, n, i, j, o, p), var in x.items():
