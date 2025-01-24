@@ -1,0 +1,4529 @@
+{
+    "type": "unicast",
+    "link_to_edge": {
+        "1": [
+            2,
+            4
+        ],
+        "2": [
+            1,
+            2
+        ],
+        "3": [
+            3,
+            4
+        ],
+        "4": [
+            2,
+            1
+        ],
+        "5": [
+            4,
+            3
+        ],
+        "6": [
+            5,
+            4
+        ],
+        "7": [
+            4,
+            6
+        ],
+        "8": [
+            6,
+            4
+        ],
+        "9": [
+            1,
+            4
+        ],
+        "10": [
+            4,
+            2
+        ],
+        "11": [
+            4,
+            5
+        ],
+        "12": [
+            2,
+            5
+        ],
+        "13": [
+            4,
+            1
+        ],
+        "14": [
+            5,
+            2
+        ]
+    },
+    "link_capacities": {
+        "1": 193952105,
+        "2": 187293873,
+        "3": 195535186,
+        "4": 204713805,
+        "5": 186288403,
+        "6": 186288576,
+        "7": 205302926,
+        "8": 196790816,
+        "9": 183820884,
+        "10": 194432834,
+        "11": 183884393,
+        "12": 183860149,
+        "13": 191280838,
+        "14": 168681482
+    },
+    "1": {
+        "src": 4,
+        "dst": 2,
+        "src_port": 43000,
+        "dependencies": [],
+        "bps": 80000000,
+        "total": 71186420,
+        "links": [
+            10
+        ],
+        "group_id": 1,
+        "collective_id": 1
+    },
+    "2": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41000,
+        "dependencies": [],
+        "bps": 80000000,
+        "total": 66619949,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 2,
+        "collective_id": 1
+    },
+    "3": {
+        "src": 3,
+        "dst": 5,
+        "src_port": 42000,
+        "dependencies": [],
+        "bps": 80000000,
+        "total": 68108972,
+        "links": [
+            3,
+            11
+        ],
+        "group_id": 3,
+        "collective_id": 1
+    },
+    "4": {
+        "src": 5,
+        "dst": 1,
+        "src_port": 44000,
+        "dependencies": [],
+        "bps": 80000000,
+        "total": 66202847,
+        "links": [
+            6,
+            13
+        ],
+        "group_id": 4,
+        "collective_id": 1
+    },
+    "5": {
+        "src": 1,
+        "dst": 6,
+        "src_port": 40000,
+        "dependencies": [],
+        "bps": 80000000,
+        "total": 69685987,
+        "links": [
+            9,
+            7
+        ],
+        "group_id": 5,
+        "collective_id": 1
+    },
+    "6": {
+        "src": 6,
+        "dst": 4,
+        "src_port": 45000,
+        "dependencies": [],
+        "bps": 80000000,
+        "total": 73243531,
+        "links": [
+            8
+        ],
+        "group_id": 6,
+        "collective_id": 1
+    },
+    "7": {
+        "src": 4,
+        "dst": 2,
+        "src_port": 43001,
+        "dependencies": [
+            6
+        ],
+        "bps": 80000000,
+        "total": 66459704,
+        "links": [
+            10
+        ],
+        "group_id": 6,
+        "collective_id": 1
+    },
+    "8": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41001,
+        "dependencies": [
+            1
+        ],
+        "bps": 80000000,
+        "total": 71666837,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 1,
+        "collective_id": 1
+    },
+    "9": {
+        "src": 3,
+        "dst": 5,
+        "src_port": 42001,
+        "dependencies": [
+            2
+        ],
+        "bps": 80000000,
+        "total": 68051682,
+        "links": [
+            3,
+            11
+        ],
+        "group_id": 2,
+        "collective_id": 1
+    },
+    "10": {
+        "src": 5,
+        "dst": 1,
+        "src_port": 44001,
+        "dependencies": [
+            3
+        ],
+        "bps": 80000000,
+        "total": 67133775,
+        "links": [
+            6,
+            13
+        ],
+        "group_id": 3,
+        "collective_id": 1
+    },
+    "11": {
+        "src": 1,
+        "dst": 6,
+        "src_port": 40001,
+        "dependencies": [
+            4
+        ],
+        "bps": 80000000,
+        "total": 69530968,
+        "links": [
+            9,
+            7
+        ],
+        "group_id": 4,
+        "collective_id": 1
+    },
+    "12": {
+        "src": 6,
+        "dst": 4,
+        "src_port": 45001,
+        "dependencies": [
+            5
+        ],
+        "bps": 80000000,
+        "total": 66286632,
+        "links": [
+            8
+        ],
+        "group_id": 5,
+        "collective_id": 1
+    },
+    "13": {
+        "src": 4,
+        "dst": 2,
+        "src_port": 43002,
+        "dependencies": [
+            12
+        ],
+        "bps": 80000000,
+        "total": 67969922,
+        "links": [
+            10
+        ],
+        "group_id": 5,
+        "collective_id": 1
+    },
+    "14": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41002,
+        "dependencies": [
+            7
+        ],
+        "bps": 80000000,
+        "total": 65718180,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 6,
+        "collective_id": 1
+    },
+    "15": {
+        "src": 3,
+        "dst": 5,
+        "src_port": 42002,
+        "dependencies": [
+            8
+        ],
+        "bps": 80000000,
+        "total": 76772279,
+        "links": [
+            3,
+            11
+        ],
+        "group_id": 1,
+        "collective_id": 1
+    },
+    "16": {
+        "src": 5,
+        "dst": 1,
+        "src_port": 44002,
+        "dependencies": [
+            9
+        ],
+        "bps": 80000000,
+        "total": 70028322,
+        "links": [
+            6,
+            13
+        ],
+        "group_id": 2,
+        "collective_id": 1
+    },
+    "17": {
+        "src": 1,
+        "dst": 6,
+        "src_port": 40002,
+        "dependencies": [
+            10
+        ],
+        "bps": 80000000,
+        "total": 67459349,
+        "links": [
+            9,
+            7
+        ],
+        "group_id": 3,
+        "collective_id": 1
+    },
+    "18": {
+        "src": 6,
+        "dst": 4,
+        "src_port": 45002,
+        "dependencies": [
+            11
+        ],
+        "bps": 80000000,
+        "total": 70652981,
+        "links": [
+            8
+        ],
+        "group_id": 4,
+        "collective_id": 1
+    },
+    "19": {
+        "src": 4,
+        "dst": 2,
+        "src_port": 43003,
+        "dependencies": [
+            18
+        ],
+        "bps": 80000000,
+        "total": 69512452,
+        "links": [
+            10
+        ],
+        "group_id": 4,
+        "collective_id": 1
+    },
+    "20": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41003,
+        "dependencies": [
+            13
+        ],
+        "bps": 80000000,
+        "total": 69132722,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 5,
+        "collective_id": 1
+    },
+    "21": {
+        "src": 3,
+        "dst": 5,
+        "src_port": 42003,
+        "dependencies": [
+            14
+        ],
+        "bps": 80000000,
+        "total": 72051735,
+        "links": [
+            3,
+            11
+        ],
+        "group_id": 6,
+        "collective_id": 1
+    },
+    "22": {
+        "src": 5,
+        "dst": 1,
+        "src_port": 44003,
+        "dependencies": [
+            15
+        ],
+        "bps": 80000000,
+        "total": 72552748,
+        "links": [
+            6,
+            13
+        ],
+        "group_id": 1,
+        "collective_id": 1
+    },
+    "23": {
+        "src": 1,
+        "dst": 6,
+        "src_port": 40003,
+        "dependencies": [
+            16
+        ],
+        "bps": 80000000,
+        "total": 68050831,
+        "links": [
+            9,
+            7
+        ],
+        "group_id": 2,
+        "collective_id": 1
+    },
+    "24": {
+        "src": 6,
+        "dst": 4,
+        "src_port": 45003,
+        "dependencies": [
+            17
+        ],
+        "bps": 80000000,
+        "total": 67892436,
+        "links": [
+            8
+        ],
+        "group_id": 3,
+        "collective_id": 1
+    },
+    "25": {
+        "src": 4,
+        "dst": 2,
+        "src_port": 43004,
+        "dependencies": [
+            24
+        ],
+        "bps": 80000000,
+        "total": 68943691,
+        "links": [
+            10
+        ],
+        "group_id": 3,
+        "collective_id": 1
+    },
+    "26": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41004,
+        "dependencies": [
+            19
+        ],
+        "bps": 80000000,
+        "total": 61859269,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 4,
+        "collective_id": 1
+    },
+    "27": {
+        "src": 3,
+        "dst": 5,
+        "src_port": 42004,
+        "dependencies": [
+            20
+        ],
+        "bps": 80000000,
+        "total": 64609090,
+        "links": [
+            3,
+            11
+        ],
+        "group_id": 5,
+        "collective_id": 1
+    },
+    "28": {
+        "src": 5,
+        "dst": 1,
+        "src_port": 44004,
+        "dependencies": [
+            21
+        ],
+        "bps": 80000000,
+        "total": 74682639,
+        "links": [
+            6,
+            13
+        ],
+        "group_id": 6,
+        "collective_id": 1
+    },
+    "29": {
+        "src": 1,
+        "dst": 6,
+        "src_port": 40004,
+        "dependencies": [
+            22
+        ],
+        "bps": 80000000,
+        "total": 75654646,
+        "links": [
+            9,
+            7
+        ],
+        "group_id": 1,
+        "collective_id": 1
+    },
+    "30": {
+        "src": 6,
+        "dst": 4,
+        "src_port": 45004,
+        "dependencies": [
+            23
+        ],
+        "bps": 80000000,
+        "total": 69034623,
+        "links": [
+            8
+        ],
+        "group_id": 2,
+        "collective_id": 1
+    },
+    "31": {
+        "src": 4,
+        "dst": 2,
+        "src_port": 43005,
+        "dependencies": [
+            30
+        ],
+        "bps": 80000000,
+        "total": 71920279,
+        "links": [
+            10
+        ],
+        "group_id": 2,
+        "collective_id": 1
+    },
+    "32": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41005,
+        "dependencies": [
+            25
+        ],
+        "bps": 80000000,
+        "total": 70992965,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 3,
+        "collective_id": 1
+    },
+    "33": {
+        "src": 3,
+        "dst": 5,
+        "src_port": 42005,
+        "dependencies": [
+            26
+        ],
+        "bps": 80000000,
+        "total": 80666535,
+        "links": [
+            3,
+            11
+        ],
+        "group_id": 4,
+        "collective_id": 1
+    },
+    "34": {
+        "src": 5,
+        "dst": 1,
+        "src_port": 44005,
+        "dependencies": [
+            27
+        ],
+        "bps": 80000000,
+        "total": 73818265,
+        "links": [
+            6,
+            13
+        ],
+        "group_id": 5,
+        "collective_id": 1
+    },
+    "35": {
+        "src": 1,
+        "dst": 6,
+        "src_port": 40005,
+        "dependencies": [
+            28
+        ],
+        "bps": 80000000,
+        "total": 69457962,
+        "links": [
+            9,
+            7
+        ],
+        "group_id": 6,
+        "collective_id": 1
+    },
+    "36": {
+        "src": 6,
+        "dst": 4,
+        "src_port": 45005,
+        "dependencies": [
+            29
+        ],
+        "bps": 80000000,
+        "total": 66565211,
+        "links": [
+            8
+        ],
+        "group_id": 1,
+        "collective_id": 1
+    },
+    "37": {
+        "src": 4,
+        "dst": 2,
+        "src_port": 43006,
+        "dependencies": [
+            36
+        ],
+        "bps": 80000000,
+        "total": 64290130,
+        "links": [
+            10
+        ],
+        "group_id": 1,
+        "collective_id": 1
+    },
+    "38": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41006,
+        "dependencies": [
+            31
+        ],
+        "bps": 80000000,
+        "total": 70616224,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 2,
+        "collective_id": 1
+    },
+    "39": {
+        "src": 3,
+        "dst": 5,
+        "src_port": 42006,
+        "dependencies": [
+            32
+        ],
+        "bps": 80000000,
+        "total": 67261429,
+        "links": [
+            3,
+            11
+        ],
+        "group_id": 3,
+        "collective_id": 1
+    },
+    "40": {
+        "src": 5,
+        "dst": 1,
+        "src_port": 44006,
+        "dependencies": [
+            33
+        ],
+        "bps": 80000000,
+        "total": 64933930,
+        "links": [
+            6,
+            13
+        ],
+        "group_id": 4,
+        "collective_id": 1
+    },
+    "41": {
+        "src": 1,
+        "dst": 6,
+        "src_port": 40006,
+        "dependencies": [
+            34
+        ],
+        "bps": 80000000,
+        "total": 67645131,
+        "links": [
+            9,
+            7
+        ],
+        "group_id": 5,
+        "collective_id": 1
+    },
+    "42": {
+        "src": 6,
+        "dst": 4,
+        "src_port": 45006,
+        "dependencies": [
+            35
+        ],
+        "bps": 80000000,
+        "total": 66124782,
+        "links": [
+            8
+        ],
+        "group_id": 6,
+        "collective_id": 1
+    },
+    "43": {
+        "src": 4,
+        "dst": 2,
+        "src_port": 43007,
+        "dependencies": [
+            42
+        ],
+        "bps": 80000000,
+        "total": 75802054,
+        "links": [
+            10
+        ],
+        "group_id": 6,
+        "collective_id": 1
+    },
+    "44": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41007,
+        "dependencies": [
+            37
+        ],
+        "bps": 80000000,
+        "total": 72986621,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 1,
+        "collective_id": 1
+    },
+    "45": {
+        "src": 3,
+        "dst": 5,
+        "src_port": 42007,
+        "dependencies": [
+            38
+        ],
+        "bps": 80000000,
+        "total": 69877200,
+        "links": [
+            3,
+            11
+        ],
+        "group_id": 2,
+        "collective_id": 1
+    },
+    "46": {
+        "src": 5,
+        "dst": 1,
+        "src_port": 44007,
+        "dependencies": [
+            39
+        ],
+        "bps": 80000000,
+        "total": 75077846,
+        "links": [
+            6,
+            13
+        ],
+        "group_id": 3,
+        "collective_id": 1
+    },
+    "47": {
+        "src": 1,
+        "dst": 6,
+        "src_port": 40007,
+        "dependencies": [
+            40
+        ],
+        "bps": 80000000,
+        "total": 70175489,
+        "links": [
+            9,
+            7
+        ],
+        "group_id": 4,
+        "collective_id": 1
+    },
+    "48": {
+        "src": 6,
+        "dst": 4,
+        "src_port": 45007,
+        "dependencies": [
+            41
+        ],
+        "bps": 80000000,
+        "total": 66894660,
+        "links": [
+            8
+        ],
+        "group_id": 5,
+        "collective_id": 1
+    },
+    "49": {
+        "src": 4,
+        "dst": 2,
+        "src_port": 43008,
+        "dependencies": [
+            48
+        ],
+        "bps": 80000000,
+        "total": 75228771,
+        "links": [
+            10
+        ],
+        "group_id": 5,
+        "collective_id": 1
+    },
+    "50": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41008,
+        "dependencies": [
+            43
+        ],
+        "bps": 80000000,
+        "total": 71788694,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 6,
+        "collective_id": 1
+    },
+    "51": {
+        "src": 3,
+        "dst": 5,
+        "src_port": 42008,
+        "dependencies": [
+            44
+        ],
+        "bps": 80000000,
+        "total": 66279629,
+        "links": [
+            3,
+            11
+        ],
+        "group_id": 1,
+        "collective_id": 1
+    },
+    "52": {
+        "src": 5,
+        "dst": 1,
+        "src_port": 44008,
+        "dependencies": [
+            45
+        ],
+        "bps": 80000000,
+        "total": 69239785,
+        "links": [
+            6,
+            13
+        ],
+        "group_id": 2,
+        "collective_id": 1
+    },
+    "53": {
+        "src": 1,
+        "dst": 6,
+        "src_port": 40008,
+        "dependencies": [
+            46
+        ],
+        "bps": 80000000,
+        "total": 66844559,
+        "links": [
+            9,
+            7
+        ],
+        "group_id": 3,
+        "collective_id": 1
+    },
+    "54": {
+        "src": 6,
+        "dst": 4,
+        "src_port": 45008,
+        "dependencies": [
+            47
+        ],
+        "bps": 80000000,
+        "total": 65071831,
+        "links": [
+            8
+        ],
+        "group_id": 4,
+        "collective_id": 1
+    },
+    "55": {
+        "src": 4,
+        "dst": 2,
+        "src_port": 43009,
+        "dependencies": [
+            54
+        ],
+        "bps": 80000000,
+        "total": 73142292,
+        "links": [
+            10
+        ],
+        "group_id": 4,
+        "collective_id": 1
+    },
+    "56": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41009,
+        "dependencies": [
+            49
+        ],
+        "bps": 80000000,
+        "total": 76578962,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 5,
+        "collective_id": 1
+    },
+    "57": {
+        "src": 3,
+        "dst": 5,
+        "src_port": 42009,
+        "dependencies": [
+            50
+        ],
+        "bps": 80000000,
+        "total": 65016719,
+        "links": [
+            3,
+            11
+        ],
+        "group_id": 6,
+        "collective_id": 1
+    },
+    "58": {
+        "src": 5,
+        "dst": 1,
+        "src_port": 44009,
+        "dependencies": [
+            51
+        ],
+        "bps": 80000000,
+        "total": 71872787,
+        "links": [
+            6,
+            13
+        ],
+        "group_id": 1,
+        "collective_id": 1
+    },
+    "59": {
+        "src": 1,
+        "dst": 6,
+        "src_port": 40009,
+        "dependencies": [
+            52
+        ],
+        "bps": 80000000,
+        "total": 67630906,
+        "links": [
+            9,
+            7
+        ],
+        "group_id": 2,
+        "collective_id": 1
+    },
+    "60": {
+        "src": 6,
+        "dst": 4,
+        "src_port": 45009,
+        "dependencies": [
+            53
+        ],
+        "bps": 80000000,
+        "total": 68202440,
+        "links": [
+            8
+        ],
+        "group_id": 3,
+        "collective_id": 1
+    },
+    "61": {
+        "src": 4,
+        "dst": 2,
+        "src_port": 43010,
+        "dependencies": [
+            60
+        ],
+        "bps": 80000000,
+        "total": 67834500,
+        "links": [
+            10
+        ],
+        "group_id": 3,
+        "collective_id": 1
+    },
+    "62": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41010,
+        "dependencies": [
+            55
+        ],
+        "bps": 80000000,
+        "total": 66885200,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 4,
+        "collective_id": 1
+    },
+    "63": {
+        "src": 3,
+        "dst": 5,
+        "src_port": 42010,
+        "dependencies": [
+            56
+        ],
+        "bps": 80000000,
+        "total": 70074662,
+        "links": [
+            3,
+            11
+        ],
+        "group_id": 5,
+        "collective_id": 1
+    },
+    "64": {
+        "src": 5,
+        "dst": 1,
+        "src_port": 44010,
+        "dependencies": [
+            57
+        ],
+        "bps": 80000000,
+        "total": 67000686,
+        "links": [
+            6,
+            13
+        ],
+        "group_id": 6,
+        "collective_id": 1
+    },
+    "65": {
+        "src": 1,
+        "dst": 6,
+        "src_port": 40010,
+        "dependencies": [
+            58
+        ],
+        "bps": 80000000,
+        "total": 70850382,
+        "links": [
+            9,
+            7
+        ],
+        "group_id": 1,
+        "collective_id": 1
+    },
+    "66": {
+        "src": 6,
+        "dst": 4,
+        "src_port": 45010,
+        "dependencies": [
+            59
+        ],
+        "bps": 80000000,
+        "total": 69729472,
+        "links": [
+            8
+        ],
+        "group_id": 2,
+        "collective_id": 1
+    },
+    "67": {
+        "src": 4,
+        "dst": 2,
+        "src_port": 43011,
+        "dependencies": [
+            66
+        ],
+        "bps": 80000000,
+        "total": 69069883,
+        "links": [
+            10
+        ],
+        "group_id": 2,
+        "collective_id": 1
+    },
+    "68": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41011,
+        "dependencies": [
+            61
+        ],
+        "bps": 80000000,
+        "total": 66732902,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 3,
+        "collective_id": 1
+    },
+    "69": {
+        "src": 3,
+        "dst": 5,
+        "src_port": 42011,
+        "dependencies": [
+            62
+        ],
+        "bps": 80000000,
+        "total": 67889105,
+        "links": [
+            3,
+            11
+        ],
+        "group_id": 4,
+        "collective_id": 1
+    },
+    "70": {
+        "src": 5,
+        "dst": 1,
+        "src_port": 44011,
+        "dependencies": [
+            63
+        ],
+        "bps": 80000000,
+        "total": 72545350,
+        "links": [
+            6,
+            13
+        ],
+        "group_id": 5,
+        "collective_id": 1
+    },
+    "71": {
+        "src": 1,
+        "dst": 6,
+        "src_port": 40011,
+        "dependencies": [
+            64
+        ],
+        "bps": 80000000,
+        "total": 71655899,
+        "links": [
+            9,
+            7
+        ],
+        "group_id": 6,
+        "collective_id": 1
+    },
+    "72": {
+        "src": 6,
+        "dst": 4,
+        "src_port": 45011,
+        "dependencies": [
+            65
+        ],
+        "bps": 80000000,
+        "total": 66488263,
+        "links": [
+            8
+        ],
+        "group_id": 1,
+        "collective_id": 1
+    },
+    "73": {
+        "src": 4,
+        "dst": 1,
+        "src_port": 43012,
+        "dependencies": [],
+        "bps": 80000000,
+        "total": 70252258,
+        "links": [
+            13
+        ],
+        "group_id": 7,
+        "collective_id": 2
+    },
+    "74": {
+        "src": 1,
+        "dst": 3,
+        "src_port": 40012,
+        "dependencies": [],
+        "bps": 80000000,
+        "total": 72531355,
+        "links": [
+            9,
+            5
+        ],
+        "group_id": 8,
+        "collective_id": 2
+    },
+    "75": {
+        "src": 3,
+        "dst": 5,
+        "src_port": 42012,
+        "dependencies": [],
+        "bps": 80000000,
+        "total": 64070072,
+        "links": [
+            3,
+            11
+        ],
+        "group_id": 9,
+        "collective_id": 2
+    },
+    "76": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44012,
+        "dependencies": [],
+        "bps": 80000000,
+        "total": 71804248,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 10,
+        "collective_id": 2
+    },
+    "77": {
+        "src": 6,
+        "dst": 2,
+        "src_port": 45012,
+        "dependencies": [],
+        "bps": 80000000,
+        "total": 67589029,
+        "links": [
+            8,
+            10
+        ],
+        "group_id": 11,
+        "collective_id": 2
+    },
+    "78": {
+        "src": 2,
+        "dst": 4,
+        "src_port": 41012,
+        "dependencies": [],
+        "bps": 80000000,
+        "total": 71899454,
+        "links": [
+            1
+        ],
+        "group_id": 12,
+        "collective_id": 2
+    },
+    "79": {
+        "src": 4,
+        "dst": 1,
+        "src_port": 43013,
+        "dependencies": [
+            78
+        ],
+        "bps": 80000000,
+        "total": 67237283,
+        "links": [
+            13
+        ],
+        "group_id": 12,
+        "collective_id": 2
+    },
+    "80": {
+        "src": 1,
+        "dst": 3,
+        "src_port": 40013,
+        "dependencies": [
+            73
+        ],
+        "bps": 80000000,
+        "total": 63596546,
+        "links": [
+            9,
+            5
+        ],
+        "group_id": 7,
+        "collective_id": 2
+    },
+    "81": {
+        "src": 3,
+        "dst": 5,
+        "src_port": 42013,
+        "dependencies": [
+            74
+        ],
+        "bps": 80000000,
+        "total": 64216394,
+        "links": [
+            3,
+            11
+        ],
+        "group_id": 8,
+        "collective_id": 2
+    },
+    "82": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44013,
+        "dependencies": [
+            75
+        ],
+        "bps": 80000000,
+        "total": 70073136,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 9,
+        "collective_id": 2
+    },
+    "83": {
+        "src": 6,
+        "dst": 2,
+        "src_port": 45013,
+        "dependencies": [
+            76
+        ],
+        "bps": 80000000,
+        "total": 70812863,
+        "links": [
+            8,
+            10
+        ],
+        "group_id": 10,
+        "collective_id": 2
+    },
+    "84": {
+        "src": 2,
+        "dst": 4,
+        "src_port": 41013,
+        "dependencies": [
+            77
+        ],
+        "bps": 80000000,
+        "total": 66744251,
+        "links": [
+            1
+        ],
+        "group_id": 11,
+        "collective_id": 2
+    },
+    "85": {
+        "src": 4,
+        "dst": 1,
+        "src_port": 43014,
+        "dependencies": [
+            84
+        ],
+        "bps": 80000000,
+        "total": 72137109,
+        "links": [
+            13
+        ],
+        "group_id": 11,
+        "collective_id": 2
+    },
+    "86": {
+        "src": 1,
+        "dst": 3,
+        "src_port": 40014,
+        "dependencies": [
+            79
+        ],
+        "bps": 80000000,
+        "total": 64097633,
+        "links": [
+            9,
+            5
+        ],
+        "group_id": 12,
+        "collective_id": 2
+    },
+    "87": {
+        "src": 3,
+        "dst": 5,
+        "src_port": 42014,
+        "dependencies": [
+            80
+        ],
+        "bps": 80000000,
+        "total": 69674101,
+        "links": [
+            3,
+            11
+        ],
+        "group_id": 7,
+        "collective_id": 2
+    },
+    "88": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44014,
+        "dependencies": [
+            81
+        ],
+        "bps": 80000000,
+        "total": 65672258,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 8,
+        "collective_id": 2
+    },
+    "89": {
+        "src": 6,
+        "dst": 2,
+        "src_port": 45014,
+        "dependencies": [
+            82
+        ],
+        "bps": 80000000,
+        "total": 67626734,
+        "links": [
+            8,
+            10
+        ],
+        "group_id": 9,
+        "collective_id": 2
+    },
+    "90": {
+        "src": 2,
+        "dst": 4,
+        "src_port": 41014,
+        "dependencies": [
+            83
+        ],
+        "bps": 80000000,
+        "total": 70070737,
+        "links": [
+            1
+        ],
+        "group_id": 10,
+        "collective_id": 2
+    },
+    "91": {
+        "src": 4,
+        "dst": 1,
+        "src_port": 43015,
+        "dependencies": [
+            90
+        ],
+        "bps": 80000000,
+        "total": 66897704,
+        "links": [
+            13
+        ],
+        "group_id": 10,
+        "collective_id": 2
+    },
+    "92": {
+        "src": 1,
+        "dst": 3,
+        "src_port": 40015,
+        "dependencies": [
+            85
+        ],
+        "bps": 80000000,
+        "total": 68560948,
+        "links": [
+            9,
+            5
+        ],
+        "group_id": 11,
+        "collective_id": 2
+    },
+    "93": {
+        "src": 3,
+        "dst": 5,
+        "src_port": 42015,
+        "dependencies": [
+            86
+        ],
+        "bps": 80000000,
+        "total": 73422315,
+        "links": [
+            3,
+            11
+        ],
+        "group_id": 12,
+        "collective_id": 2
+    },
+    "94": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44015,
+        "dependencies": [
+            87
+        ],
+        "bps": 80000000,
+        "total": 67888683,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 7,
+        "collective_id": 2
+    },
+    "95": {
+        "src": 6,
+        "dst": 2,
+        "src_port": 45015,
+        "dependencies": [
+            88
+        ],
+        "bps": 80000000,
+        "total": 72826022,
+        "links": [
+            8,
+            10
+        ],
+        "group_id": 8,
+        "collective_id": 2
+    },
+    "96": {
+        "src": 2,
+        "dst": 4,
+        "src_port": 41015,
+        "dependencies": [
+            89
+        ],
+        "bps": 80000000,
+        "total": 65956455,
+        "links": [
+            1
+        ],
+        "group_id": 9,
+        "collective_id": 2
+    },
+    "97": {
+        "src": 4,
+        "dst": 1,
+        "src_port": 43016,
+        "dependencies": [
+            96
+        ],
+        "bps": 80000000,
+        "total": 71756866,
+        "links": [
+            13
+        ],
+        "group_id": 9,
+        "collective_id": 2
+    },
+    "98": {
+        "src": 1,
+        "dst": 3,
+        "src_port": 40016,
+        "dependencies": [
+            91
+        ],
+        "bps": 80000000,
+        "total": 74943714,
+        "links": [
+            9,
+            5
+        ],
+        "group_id": 10,
+        "collective_id": 2
+    },
+    "99": {
+        "src": 3,
+        "dst": 5,
+        "src_port": 42016,
+        "dependencies": [
+            92
+        ],
+        "bps": 80000000,
+        "total": 61266043,
+        "links": [
+            3,
+            11
+        ],
+        "group_id": 11,
+        "collective_id": 2
+    },
+    "100": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44016,
+        "dependencies": [
+            93
+        ],
+        "bps": 80000000,
+        "total": 67119716,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 12,
+        "collective_id": 2
+    },
+    "101": {
+        "src": 6,
+        "dst": 2,
+        "src_port": 45016,
+        "dependencies": [
+            94
+        ],
+        "bps": 80000000,
+        "total": 71922080,
+        "links": [
+            8,
+            10
+        ],
+        "group_id": 7,
+        "collective_id": 2
+    },
+    "102": {
+        "src": 2,
+        "dst": 4,
+        "src_port": 41016,
+        "dependencies": [
+            95
+        ],
+        "bps": 80000000,
+        "total": 69195372,
+        "links": [
+            1
+        ],
+        "group_id": 8,
+        "collective_id": 2
+    },
+    "103": {
+        "src": 4,
+        "dst": 1,
+        "src_port": 43017,
+        "dependencies": [
+            102
+        ],
+        "bps": 80000000,
+        "total": 71202316,
+        "links": [
+            13
+        ],
+        "group_id": 8,
+        "collective_id": 2
+    },
+    "104": {
+        "src": 1,
+        "dst": 3,
+        "src_port": 40017,
+        "dependencies": [
+            97
+        ],
+        "bps": 80000000,
+        "total": 67793985,
+        "links": [
+            9,
+            5
+        ],
+        "group_id": 9,
+        "collective_id": 2
+    },
+    "105": {
+        "src": 3,
+        "dst": 5,
+        "src_port": 42017,
+        "dependencies": [
+            98
+        ],
+        "bps": 80000000,
+        "total": 70207720,
+        "links": [
+            3,
+            11
+        ],
+        "group_id": 10,
+        "collective_id": 2
+    },
+    "106": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44017,
+        "dependencies": [
+            99
+        ],
+        "bps": 80000000,
+        "total": 69360935,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 11,
+        "collective_id": 2
+    },
+    "107": {
+        "src": 6,
+        "dst": 2,
+        "src_port": 45017,
+        "dependencies": [
+            100
+        ],
+        "bps": 80000000,
+        "total": 73986761,
+        "links": [
+            8,
+            10
+        ],
+        "group_id": 12,
+        "collective_id": 2
+    },
+    "108": {
+        "src": 2,
+        "dst": 4,
+        "src_port": 41017,
+        "dependencies": [
+            101
+        ],
+        "bps": 80000000,
+        "total": 70794332,
+        "links": [
+            1
+        ],
+        "group_id": 7,
+        "collective_id": 2
+    },
+    "109": {
+        "src": 4,
+        "dst": 1,
+        "src_port": 43018,
+        "dependencies": [
+            108
+        ],
+        "bps": 80000000,
+        "total": 71085073,
+        "links": [
+            13
+        ],
+        "group_id": 7,
+        "collective_id": 2
+    },
+    "110": {
+        "src": 1,
+        "dst": 3,
+        "src_port": 40018,
+        "dependencies": [
+            103
+        ],
+        "bps": 80000000,
+        "total": 68465452,
+        "links": [
+            9,
+            5
+        ],
+        "group_id": 8,
+        "collective_id": 2
+    },
+    "111": {
+        "src": 3,
+        "dst": 5,
+        "src_port": 42018,
+        "dependencies": [
+            104
+        ],
+        "bps": 80000000,
+        "total": 68200759,
+        "links": [
+            3,
+            11
+        ],
+        "group_id": 9,
+        "collective_id": 2
+    },
+    "112": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44018,
+        "dependencies": [
+            105
+        ],
+        "bps": 80000000,
+        "total": 68393166,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 10,
+        "collective_id": 2
+    },
+    "113": {
+        "src": 6,
+        "dst": 2,
+        "src_port": 45018,
+        "dependencies": [
+            106
+        ],
+        "bps": 80000000,
+        "total": 71283777,
+        "links": [
+            8,
+            10
+        ],
+        "group_id": 11,
+        "collective_id": 2
+    },
+    "114": {
+        "src": 2,
+        "dst": 4,
+        "src_port": 41018,
+        "dependencies": [
+            107
+        ],
+        "bps": 80000000,
+        "total": 68433619,
+        "links": [
+            1
+        ],
+        "group_id": 12,
+        "collective_id": 2
+    },
+    "115": {
+        "src": 4,
+        "dst": 1,
+        "src_port": 43019,
+        "dependencies": [
+            114
+        ],
+        "bps": 80000000,
+        "total": 70917903,
+        "links": [
+            13
+        ],
+        "group_id": 12,
+        "collective_id": 2
+    },
+    "116": {
+        "src": 1,
+        "dst": 3,
+        "src_port": 40019,
+        "dependencies": [
+            109
+        ],
+        "bps": 80000000,
+        "total": 77159118,
+        "links": [
+            9,
+            5
+        ],
+        "group_id": 7,
+        "collective_id": 2
+    },
+    "117": {
+        "src": 3,
+        "dst": 5,
+        "src_port": 42019,
+        "dependencies": [
+            110
+        ],
+        "bps": 80000000,
+        "total": 72949868,
+        "links": [
+            3,
+            11
+        ],
+        "group_id": 8,
+        "collective_id": 2
+    },
+    "118": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44019,
+        "dependencies": [
+            111
+        ],
+        "bps": 80000000,
+        "total": 68765532,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 9,
+        "collective_id": 2
+    },
+    "119": {
+        "src": 6,
+        "dst": 2,
+        "src_port": 45019,
+        "dependencies": [
+            112
+        ],
+        "bps": 80000000,
+        "total": 74103614,
+        "links": [
+            8,
+            10
+        ],
+        "group_id": 10,
+        "collective_id": 2
+    },
+    "120": {
+        "src": 2,
+        "dst": 4,
+        "src_port": 41019,
+        "dependencies": [
+            113
+        ],
+        "bps": 80000000,
+        "total": 68478740,
+        "links": [
+            1
+        ],
+        "group_id": 11,
+        "collective_id": 2
+    },
+    "121": {
+        "src": 4,
+        "dst": 1,
+        "src_port": 43020,
+        "dependencies": [
+            120
+        ],
+        "bps": 80000000,
+        "total": 62781305,
+        "links": [
+            13
+        ],
+        "group_id": 11,
+        "collective_id": 2
+    },
+    "122": {
+        "src": 1,
+        "dst": 3,
+        "src_port": 40020,
+        "dependencies": [
+            115
+        ],
+        "bps": 80000000,
+        "total": 66381550,
+        "links": [
+            9,
+            5
+        ],
+        "group_id": 12,
+        "collective_id": 2
+    },
+    "123": {
+        "src": 3,
+        "dst": 5,
+        "src_port": 42020,
+        "dependencies": [
+            116
+        ],
+        "bps": 80000000,
+        "total": 63366175,
+        "links": [
+            3,
+            11
+        ],
+        "group_id": 7,
+        "collective_id": 2
+    },
+    "124": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44020,
+        "dependencies": [
+            117
+        ],
+        "bps": 80000000,
+        "total": 68676438,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 8,
+        "collective_id": 2
+    },
+    "125": {
+        "src": 6,
+        "dst": 2,
+        "src_port": 45020,
+        "dependencies": [
+            118
+        ],
+        "bps": 80000000,
+        "total": 69969444,
+        "links": [
+            8,
+            10
+        ],
+        "group_id": 9,
+        "collective_id": 2
+    },
+    "126": {
+        "src": 2,
+        "dst": 4,
+        "src_port": 41020,
+        "dependencies": [
+            119
+        ],
+        "bps": 80000000,
+        "total": 75764640,
+        "links": [
+            1
+        ],
+        "group_id": 10,
+        "collective_id": 2
+    },
+    "127": {
+        "src": 4,
+        "dst": 1,
+        "src_port": 43021,
+        "dependencies": [
+            126
+        ],
+        "bps": 80000000,
+        "total": 71047761,
+        "links": [
+            13
+        ],
+        "group_id": 10,
+        "collective_id": 2
+    },
+    "128": {
+        "src": 1,
+        "dst": 3,
+        "src_port": 40021,
+        "dependencies": [
+            121
+        ],
+        "bps": 80000000,
+        "total": 69139255,
+        "links": [
+            9,
+            5
+        ],
+        "group_id": 11,
+        "collective_id": 2
+    },
+    "129": {
+        "src": 3,
+        "dst": 5,
+        "src_port": 42021,
+        "dependencies": [
+            122
+        ],
+        "bps": 80000000,
+        "total": 72804049,
+        "links": [
+            3,
+            11
+        ],
+        "group_id": 12,
+        "collective_id": 2
+    },
+    "130": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44021,
+        "dependencies": [
+            123
+        ],
+        "bps": 80000000,
+        "total": 62176589,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 7,
+        "collective_id": 2
+    },
+    "131": {
+        "src": 6,
+        "dst": 2,
+        "src_port": 45021,
+        "dependencies": [
+            124
+        ],
+        "bps": 80000000,
+        "total": 70728599,
+        "links": [
+            8,
+            10
+        ],
+        "group_id": 8,
+        "collective_id": 2
+    },
+    "132": {
+        "src": 2,
+        "dst": 4,
+        "src_port": 41021,
+        "dependencies": [
+            125
+        ],
+        "bps": 80000000,
+        "total": 72599436,
+        "links": [
+            1
+        ],
+        "group_id": 9,
+        "collective_id": 2
+    },
+    "133": {
+        "src": 4,
+        "dst": 1,
+        "src_port": 43022,
+        "dependencies": [
+            132
+        ],
+        "bps": 80000000,
+        "total": 64737033,
+        "links": [
+            13
+        ],
+        "group_id": 9,
+        "collective_id": 2
+    },
+    "134": {
+        "src": 1,
+        "dst": 3,
+        "src_port": 40022,
+        "dependencies": [
+            127
+        ],
+        "bps": 80000000,
+        "total": 73902777,
+        "links": [
+            9,
+            5
+        ],
+        "group_id": 10,
+        "collective_id": 2
+    },
+    "135": {
+        "src": 3,
+        "dst": 5,
+        "src_port": 42022,
+        "dependencies": [
+            128
+        ],
+        "bps": 80000000,
+        "total": 71088197,
+        "links": [
+            3,
+            11
+        ],
+        "group_id": 11,
+        "collective_id": 2
+    },
+    "136": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44022,
+        "dependencies": [
+            129
+        ],
+        "bps": 80000000,
+        "total": 68453530,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 12,
+        "collective_id": 2
+    },
+    "137": {
+        "src": 6,
+        "dst": 2,
+        "src_port": 45022,
+        "dependencies": [
+            130
+        ],
+        "bps": 80000000,
+        "total": 72116800,
+        "links": [
+            8,
+            10
+        ],
+        "group_id": 7,
+        "collective_id": 2
+    },
+    "138": {
+        "src": 2,
+        "dst": 4,
+        "src_port": 41022,
+        "dependencies": [
+            131
+        ],
+        "bps": 80000000,
+        "total": 77841713,
+        "links": [
+            1
+        ],
+        "group_id": 8,
+        "collective_id": 2
+    },
+    "139": {
+        "src": 4,
+        "dst": 1,
+        "src_port": 43023,
+        "dependencies": [
+            138
+        ],
+        "bps": 80000000,
+        "total": 70540735,
+        "links": [
+            13
+        ],
+        "group_id": 8,
+        "collective_id": 2
+    },
+    "140": {
+        "src": 1,
+        "dst": 3,
+        "src_port": 40023,
+        "dependencies": [
+            133
+        ],
+        "bps": 80000000,
+        "total": 70772660,
+        "links": [
+            9,
+            5
+        ],
+        "group_id": 9,
+        "collective_id": 2
+    },
+    "141": {
+        "src": 3,
+        "dst": 5,
+        "src_port": 42023,
+        "dependencies": [
+            134
+        ],
+        "bps": 80000000,
+        "total": 68299484,
+        "links": [
+            3,
+            11
+        ],
+        "group_id": 10,
+        "collective_id": 2
+    },
+    "142": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44023,
+        "dependencies": [
+            135
+        ],
+        "bps": 80000000,
+        "total": 66934645,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 11,
+        "collective_id": 2
+    },
+    "143": {
+        "src": 6,
+        "dst": 2,
+        "src_port": 45023,
+        "dependencies": [
+            136
+        ],
+        "bps": 80000000,
+        "total": 72807301,
+        "links": [
+            8,
+            10
+        ],
+        "group_id": 12,
+        "collective_id": 2
+    },
+    "144": {
+        "src": 2,
+        "dst": 4,
+        "src_port": 41023,
+        "dependencies": [
+            137
+        ],
+        "bps": 80000000,
+        "total": 66912837,
+        "links": [
+            1
+        ],
+        "group_id": 7,
+        "collective_id": 2
+    },
+    "145": {
+        "src": 4,
+        "dst": 2,
+        "src_port": 43024,
+        "dependencies": [],
+        "bps": 80000000,
+        "total": 70155209,
+        "links": [
+            10
+        ],
+        "group_id": 13,
+        "collective_id": 3
+    },
+    "146": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41024,
+        "dependencies": [],
+        "bps": 80000000,
+        "total": 68235533,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 14,
+        "collective_id": 3
+    },
+    "147": {
+        "src": 3,
+        "dst": 1,
+        "src_port": 42024,
+        "dependencies": [],
+        "bps": 80000000,
+        "total": 71579222,
+        "links": [
+            3,
+            13
+        ],
+        "group_id": 15,
+        "collective_id": 3
+    },
+    "148": {
+        "src": 1,
+        "dst": 5,
+        "src_port": 40024,
+        "dependencies": [],
+        "bps": 80000000,
+        "total": 71071300,
+        "links": [
+            2,
+            12
+        ],
+        "group_id": 16,
+        "collective_id": 3
+    },
+    "149": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44024,
+        "dependencies": [],
+        "bps": 80000000,
+        "total": 73531532,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 17,
+        "collective_id": 3
+    },
+    "150": {
+        "src": 6,
+        "dst": 4,
+        "src_port": 45024,
+        "dependencies": [],
+        "bps": 80000000,
+        "total": 68122430,
+        "links": [
+            8
+        ],
+        "group_id": 18,
+        "collective_id": 3
+    },
+    "151": {
+        "src": 4,
+        "dst": 2,
+        "src_port": 43025,
+        "dependencies": [
+            150
+        ],
+        "bps": 80000000,
+        "total": 68961785,
+        "links": [
+            10
+        ],
+        "group_id": 18,
+        "collective_id": 3
+    },
+    "152": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41025,
+        "dependencies": [
+            145
+        ],
+        "bps": 80000000,
+        "total": 66484040,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 13,
+        "collective_id": 3
+    },
+    "153": {
+        "src": 3,
+        "dst": 1,
+        "src_port": 42025,
+        "dependencies": [
+            146
+        ],
+        "bps": 80000000,
+        "total": 68352149,
+        "links": [
+            3,
+            13
+        ],
+        "group_id": 14,
+        "collective_id": 3
+    },
+    "154": {
+        "src": 1,
+        "dst": 5,
+        "src_port": 40025,
+        "dependencies": [
+            147
+        ],
+        "bps": 80000000,
+        "total": 71223827,
+        "links": [
+            2,
+            12
+        ],
+        "group_id": 15,
+        "collective_id": 3
+    },
+    "155": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44025,
+        "dependencies": [
+            148
+        ],
+        "bps": 80000000,
+        "total": 72550934,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 16,
+        "collective_id": 3
+    },
+    "156": {
+        "src": 6,
+        "dst": 4,
+        "src_port": 45025,
+        "dependencies": [
+            149
+        ],
+        "bps": 80000000,
+        "total": 66681865,
+        "links": [
+            8
+        ],
+        "group_id": 17,
+        "collective_id": 3
+    },
+    "157": {
+        "src": 4,
+        "dst": 2,
+        "src_port": 43026,
+        "dependencies": [
+            156
+        ],
+        "bps": 80000000,
+        "total": 72944560,
+        "links": [
+            10
+        ],
+        "group_id": 17,
+        "collective_id": 3
+    },
+    "158": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41026,
+        "dependencies": [
+            151
+        ],
+        "bps": 80000000,
+        "total": 74643364,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 18,
+        "collective_id": 3
+    },
+    "159": {
+        "src": 3,
+        "dst": 1,
+        "src_port": 42026,
+        "dependencies": [
+            152
+        ],
+        "bps": 80000000,
+        "total": 71350126,
+        "links": [
+            3,
+            13
+        ],
+        "group_id": 13,
+        "collective_id": 3
+    },
+    "160": {
+        "src": 1,
+        "dst": 5,
+        "src_port": 40026,
+        "dependencies": [
+            153
+        ],
+        "bps": 80000000,
+        "total": 76464943,
+        "links": [
+            2,
+            12
+        ],
+        "group_id": 14,
+        "collective_id": 3
+    },
+    "161": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44026,
+        "dependencies": [
+            154
+        ],
+        "bps": 80000000,
+        "total": 67200477,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 15,
+        "collective_id": 3
+    },
+    "162": {
+        "src": 6,
+        "dst": 4,
+        "src_port": 45026,
+        "dependencies": [
+            155
+        ],
+        "bps": 80000000,
+        "total": 65554683,
+        "links": [
+            8
+        ],
+        "group_id": 16,
+        "collective_id": 3
+    },
+    "163": {
+        "src": 4,
+        "dst": 2,
+        "src_port": 43027,
+        "dependencies": [
+            162
+        ],
+        "bps": 80000000,
+        "total": 63687989,
+        "links": [
+            10
+        ],
+        "group_id": 16,
+        "collective_id": 3
+    },
+    "164": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41027,
+        "dependencies": [
+            157
+        ],
+        "bps": 80000000,
+        "total": 75134121,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 17,
+        "collective_id": 3
+    },
+    "165": {
+        "src": 3,
+        "dst": 1,
+        "src_port": 42027,
+        "dependencies": [
+            158
+        ],
+        "bps": 80000000,
+        "total": 72192240,
+        "links": [
+            3,
+            13
+        ],
+        "group_id": 18,
+        "collective_id": 3
+    },
+    "166": {
+        "src": 1,
+        "dst": 5,
+        "src_port": 40027,
+        "dependencies": [
+            159
+        ],
+        "bps": 80000000,
+        "total": 69710784,
+        "links": [
+            2,
+            12
+        ],
+        "group_id": 13,
+        "collective_id": 3
+    },
+    "167": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44027,
+        "dependencies": [
+            160
+        ],
+        "bps": 80000000,
+        "total": 70883628,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 14,
+        "collective_id": 3
+    },
+    "168": {
+        "src": 6,
+        "dst": 4,
+        "src_port": 45027,
+        "dependencies": [
+            161
+        ],
+        "bps": 80000000,
+        "total": 65971197,
+        "links": [
+            8
+        ],
+        "group_id": 15,
+        "collective_id": 3
+    },
+    "169": {
+        "src": 4,
+        "dst": 2,
+        "src_port": 43028,
+        "dependencies": [
+            168
+        ],
+        "bps": 80000000,
+        "total": 78453589,
+        "links": [
+            10
+        ],
+        "group_id": 15,
+        "collective_id": 3
+    },
+    "170": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41028,
+        "dependencies": [
+            163
+        ],
+        "bps": 80000000,
+        "total": 70356727,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 16,
+        "collective_id": 3
+    },
+    "171": {
+        "src": 3,
+        "dst": 1,
+        "src_port": 42028,
+        "dependencies": [
+            164
+        ],
+        "bps": 80000000,
+        "total": 70287429,
+        "links": [
+            3,
+            13
+        ],
+        "group_id": 17,
+        "collective_id": 3
+    },
+    "172": {
+        "src": 1,
+        "dst": 5,
+        "src_port": 40028,
+        "dependencies": [
+            165
+        ],
+        "bps": 80000000,
+        "total": 72441805,
+        "links": [
+            2,
+            12
+        ],
+        "group_id": 18,
+        "collective_id": 3
+    },
+    "173": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44028,
+        "dependencies": [
+            166
+        ],
+        "bps": 80000000,
+        "total": 71586316,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 13,
+        "collective_id": 3
+    },
+    "174": {
+        "src": 6,
+        "dst": 4,
+        "src_port": 45028,
+        "dependencies": [
+            167
+        ],
+        "bps": 80000000,
+        "total": 70687598,
+        "links": [
+            8
+        ],
+        "group_id": 14,
+        "collective_id": 3
+    },
+    "175": {
+        "src": 4,
+        "dst": 2,
+        "src_port": 43029,
+        "dependencies": [
+            174
+        ],
+        "bps": 80000000,
+        "total": 67142158,
+        "links": [
+            10
+        ],
+        "group_id": 14,
+        "collective_id": 3
+    },
+    "176": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41029,
+        "dependencies": [
+            169
+        ],
+        "bps": 80000000,
+        "total": 71552968,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 15,
+        "collective_id": 3
+    },
+    "177": {
+        "src": 3,
+        "dst": 1,
+        "src_port": 42029,
+        "dependencies": [
+            170
+        ],
+        "bps": 80000000,
+        "total": 76483219,
+        "links": [
+            3,
+            13
+        ],
+        "group_id": 16,
+        "collective_id": 3
+    },
+    "178": {
+        "src": 1,
+        "dst": 5,
+        "src_port": 40029,
+        "dependencies": [
+            171
+        ],
+        "bps": 80000000,
+        "total": 74607651,
+        "links": [
+            2,
+            12
+        ],
+        "group_id": 17,
+        "collective_id": 3
+    },
+    "179": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44029,
+        "dependencies": [
+            172
+        ],
+        "bps": 80000000,
+        "total": 75473658,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 18,
+        "collective_id": 3
+    },
+    "180": {
+        "src": 6,
+        "dst": 4,
+        "src_port": 45029,
+        "dependencies": [
+            173
+        ],
+        "bps": 80000000,
+        "total": 68118238,
+        "links": [
+            8
+        ],
+        "group_id": 13,
+        "collective_id": 3
+    },
+    "181": {
+        "src": 4,
+        "dst": 2,
+        "src_port": 43030,
+        "dependencies": [
+            180
+        ],
+        "bps": 80000000,
+        "total": 66446147,
+        "links": [
+            10
+        ],
+        "group_id": 13,
+        "collective_id": 3
+    },
+    "182": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41030,
+        "dependencies": [
+            175
+        ],
+        "bps": 80000000,
+        "total": 69465410,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 14,
+        "collective_id": 3
+    },
+    "183": {
+        "src": 3,
+        "dst": 1,
+        "src_port": 42030,
+        "dependencies": [
+            176
+        ],
+        "bps": 80000000,
+        "total": 70099839,
+        "links": [
+            3,
+            13
+        ],
+        "group_id": 15,
+        "collective_id": 3
+    },
+    "184": {
+        "src": 1,
+        "dst": 5,
+        "src_port": 40030,
+        "dependencies": [
+            177
+        ],
+        "bps": 80000000,
+        "total": 73729543,
+        "links": [
+            2,
+            12
+        ],
+        "group_id": 16,
+        "collective_id": 3
+    },
+    "185": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44030,
+        "dependencies": [
+            178
+        ],
+        "bps": 80000000,
+        "total": 63989474,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 17,
+        "collective_id": 3
+    },
+    "186": {
+        "src": 6,
+        "dst": 4,
+        "src_port": 45030,
+        "dependencies": [
+            179
+        ],
+        "bps": 80000000,
+        "total": 75251233,
+        "links": [
+            8
+        ],
+        "group_id": 18,
+        "collective_id": 3
+    },
+    "187": {
+        "src": 4,
+        "dst": 2,
+        "src_port": 43031,
+        "dependencies": [
+            186
+        ],
+        "bps": 80000000,
+        "total": 69352789,
+        "links": [
+            10
+        ],
+        "group_id": 18,
+        "collective_id": 3
+    },
+    "188": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41031,
+        "dependencies": [
+            181
+        ],
+        "bps": 80000000,
+        "total": 68413009,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 13,
+        "collective_id": 3
+    },
+    "189": {
+        "src": 3,
+        "dst": 1,
+        "src_port": 42031,
+        "dependencies": [
+            182
+        ],
+        "bps": 80000000,
+        "total": 66367505,
+        "links": [
+            3,
+            13
+        ],
+        "group_id": 14,
+        "collective_id": 3
+    },
+    "190": {
+        "src": 1,
+        "dst": 5,
+        "src_port": 40031,
+        "dependencies": [
+            183
+        ],
+        "bps": 80000000,
+        "total": 64120923,
+        "links": [
+            2,
+            12
+        ],
+        "group_id": 15,
+        "collective_id": 3
+    },
+    "191": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44031,
+        "dependencies": [
+            184
+        ],
+        "bps": 80000000,
+        "total": 72782256,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 16,
+        "collective_id": 3
+    },
+    "192": {
+        "src": 6,
+        "dst": 4,
+        "src_port": 45031,
+        "dependencies": [
+            185
+        ],
+        "bps": 80000000,
+        "total": 70161332,
+        "links": [
+            8
+        ],
+        "group_id": 17,
+        "collective_id": 3
+    },
+    "193": {
+        "src": 4,
+        "dst": 2,
+        "src_port": 43032,
+        "dependencies": [
+            192
+        ],
+        "bps": 80000000,
+        "total": 65396327,
+        "links": [
+            10
+        ],
+        "group_id": 17,
+        "collective_id": 3
+    },
+    "194": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41032,
+        "dependencies": [
+            187
+        ],
+        "bps": 80000000,
+        "total": 65378438,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 18,
+        "collective_id": 3
+    },
+    "195": {
+        "src": 3,
+        "dst": 1,
+        "src_port": 42032,
+        "dependencies": [
+            188
+        ],
+        "bps": 80000000,
+        "total": 68731414,
+        "links": [
+            3,
+            13
+        ],
+        "group_id": 13,
+        "collective_id": 3
+    },
+    "196": {
+        "src": 1,
+        "dst": 5,
+        "src_port": 40032,
+        "dependencies": [
+            189
+        ],
+        "bps": 80000000,
+        "total": 75738720,
+        "links": [
+            2,
+            12
+        ],
+        "group_id": 14,
+        "collective_id": 3
+    },
+    "197": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44032,
+        "dependencies": [
+            190
+        ],
+        "bps": 80000000,
+        "total": 68997729,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 15,
+        "collective_id": 3
+    },
+    "198": {
+        "src": 6,
+        "dst": 4,
+        "src_port": 45032,
+        "dependencies": [
+            191
+        ],
+        "bps": 80000000,
+        "total": 64651201,
+        "links": [
+            8
+        ],
+        "group_id": 16,
+        "collective_id": 3
+    },
+    "199": {
+        "src": 4,
+        "dst": 2,
+        "src_port": 43033,
+        "dependencies": [
+            198
+        ],
+        "bps": 80000000,
+        "total": 69046132,
+        "links": [
+            10
+        ],
+        "group_id": 16,
+        "collective_id": 3
+    },
+    "200": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41033,
+        "dependencies": [
+            193
+        ],
+        "bps": 80000000,
+        "total": 68951829,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 17,
+        "collective_id": 3
+    },
+    "201": {
+        "src": 3,
+        "dst": 1,
+        "src_port": 42033,
+        "dependencies": [
+            194
+        ],
+        "bps": 80000000,
+        "total": 60478765,
+        "links": [
+            3,
+            13
+        ],
+        "group_id": 18,
+        "collective_id": 3
+    },
+    "202": {
+        "src": 1,
+        "dst": 5,
+        "src_port": 40033,
+        "dependencies": [
+            195
+        ],
+        "bps": 80000000,
+        "total": 69715292,
+        "links": [
+            2,
+            12
+        ],
+        "group_id": 13,
+        "collective_id": 3
+    },
+    "203": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44033,
+        "dependencies": [
+            196
+        ],
+        "bps": 80000000,
+        "total": 69097892,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 14,
+        "collective_id": 3
+    },
+    "204": {
+        "src": 6,
+        "dst": 4,
+        "src_port": 45033,
+        "dependencies": [
+            197
+        ],
+        "bps": 80000000,
+        "total": 72338484,
+        "links": [
+            8
+        ],
+        "group_id": 15,
+        "collective_id": 3
+    },
+    "205": {
+        "src": 4,
+        "dst": 2,
+        "src_port": 43034,
+        "dependencies": [
+            204
+        ],
+        "bps": 80000000,
+        "total": 76367637,
+        "links": [
+            10
+        ],
+        "group_id": 15,
+        "collective_id": 3
+    },
+    "206": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41034,
+        "dependencies": [
+            199
+        ],
+        "bps": 80000000,
+        "total": 73842697,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 16,
+        "collective_id": 3
+    },
+    "207": {
+        "src": 3,
+        "dst": 1,
+        "src_port": 42034,
+        "dependencies": [
+            200
+        ],
+        "bps": 80000000,
+        "total": 68965233,
+        "links": [
+            3,
+            13
+        ],
+        "group_id": 17,
+        "collective_id": 3
+    },
+    "208": {
+        "src": 1,
+        "dst": 5,
+        "src_port": 40034,
+        "dependencies": [
+            201
+        ],
+        "bps": 80000000,
+        "total": 66037478,
+        "links": [
+            2,
+            12
+        ],
+        "group_id": 18,
+        "collective_id": 3
+    },
+    "209": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44034,
+        "dependencies": [
+            202
+        ],
+        "bps": 80000000,
+        "total": 78899611,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 13,
+        "collective_id": 3
+    },
+    "210": {
+        "src": 6,
+        "dst": 4,
+        "src_port": 45034,
+        "dependencies": [
+            203
+        ],
+        "bps": 80000000,
+        "total": 70112050,
+        "links": [
+            8
+        ],
+        "group_id": 14,
+        "collective_id": 3
+    },
+    "211": {
+        "src": 4,
+        "dst": 2,
+        "src_port": 43035,
+        "dependencies": [
+            210
+        ],
+        "bps": 80000000,
+        "total": 69953753,
+        "links": [
+            10
+        ],
+        "group_id": 14,
+        "collective_id": 3
+    },
+    "212": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41035,
+        "dependencies": [
+            205
+        ],
+        "bps": 80000000,
+        "total": 69820743,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 15,
+        "collective_id": 3
+    },
+    "213": {
+        "src": 3,
+        "dst": 1,
+        "src_port": 42035,
+        "dependencies": [
+            206
+        ],
+        "bps": 80000000,
+        "total": 70597423,
+        "links": [
+            3,
+            13
+        ],
+        "group_id": 16,
+        "collective_id": 3
+    },
+    "214": {
+        "src": 1,
+        "dst": 5,
+        "src_port": 40035,
+        "dependencies": [
+            207
+        ],
+        "bps": 80000000,
+        "total": 69400490,
+        "links": [
+            2,
+            12
+        ],
+        "group_id": 17,
+        "collective_id": 3
+    },
+    "215": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44035,
+        "dependencies": [
+            208
+        ],
+        "bps": 80000000,
+        "total": 67899973,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 18,
+        "collective_id": 3
+    },
+    "216": {
+        "src": 6,
+        "dst": 4,
+        "src_port": 45035,
+        "dependencies": [
+            209
+        ],
+        "bps": 80000000,
+        "total": 67993656,
+        "links": [
+            8
+        ],
+        "group_id": 13,
+        "collective_id": 3
+    },
+    "217": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41036,
+        "dependencies": [],
+        "bps": 80000000,
+        "total": 69790586,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 19,
+        "collective_id": 4
+    },
+    "218": {
+        "src": 3,
+        "dst": 4,
+        "src_port": 42036,
+        "dependencies": [],
+        "bps": 80000000,
+        "total": 68005659,
+        "links": [
+            3
+        ],
+        "group_id": 20,
+        "collective_id": 4
+    },
+    "219": {
+        "src": 4,
+        "dst": 5,
+        "src_port": 43036,
+        "dependencies": [],
+        "bps": 80000000,
+        "total": 67413490,
+        "links": [
+            11
+        ],
+        "group_id": 21,
+        "collective_id": 4
+    },
+    "220": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44036,
+        "dependencies": [],
+        "bps": 80000000,
+        "total": 70277067,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 22,
+        "collective_id": 4
+    },
+    "221": {
+        "src": 6,
+        "dst": 1,
+        "src_port": 45036,
+        "dependencies": [],
+        "bps": 80000000,
+        "total": 69013857,
+        "links": [
+            8,
+            13
+        ],
+        "group_id": 23,
+        "collective_id": 4
+    },
+    "222": {
+        "src": 1,
+        "dst": 2,
+        "src_port": 40036,
+        "dependencies": [],
+        "bps": 80000000,
+        "total": 75161903,
+        "links": [
+            2
+        ],
+        "group_id": 24,
+        "collective_id": 4
+    },
+    "223": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41037,
+        "dependencies": [
+            222
+        ],
+        "bps": 80000000,
+        "total": 60639256,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 24,
+        "collective_id": 4
+    },
+    "224": {
+        "src": 3,
+        "dst": 4,
+        "src_port": 42037,
+        "dependencies": [
+            217
+        ],
+        "bps": 80000000,
+        "total": 73720160,
+        "links": [
+            3
+        ],
+        "group_id": 19,
+        "collective_id": 4
+    },
+    "225": {
+        "src": 4,
+        "dst": 5,
+        "src_port": 43037,
+        "dependencies": [
+            218
+        ],
+        "bps": 80000000,
+        "total": 74260450,
+        "links": [
+            11
+        ],
+        "group_id": 20,
+        "collective_id": 4
+    },
+    "226": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44037,
+        "dependencies": [
+            219
+        ],
+        "bps": 80000000,
+        "total": 62658043,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 21,
+        "collective_id": 4
+    },
+    "227": {
+        "src": 6,
+        "dst": 1,
+        "src_port": 45037,
+        "dependencies": [
+            220
+        ],
+        "bps": 80000000,
+        "total": 68707287,
+        "links": [
+            8,
+            13
+        ],
+        "group_id": 22,
+        "collective_id": 4
+    },
+    "228": {
+        "src": 1,
+        "dst": 2,
+        "src_port": 40037,
+        "dependencies": [
+            221
+        ],
+        "bps": 80000000,
+        "total": 68606787,
+        "links": [
+            2
+        ],
+        "group_id": 23,
+        "collective_id": 4
+    },
+    "229": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41038,
+        "dependencies": [
+            228
+        ],
+        "bps": 80000000,
+        "total": 64985457,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 23,
+        "collective_id": 4
+    },
+    "230": {
+        "src": 3,
+        "dst": 4,
+        "src_port": 42038,
+        "dependencies": [
+            223
+        ],
+        "bps": 80000000,
+        "total": 67186400,
+        "links": [
+            3
+        ],
+        "group_id": 24,
+        "collective_id": 4
+    },
+    "231": {
+        "src": 4,
+        "dst": 5,
+        "src_port": 43038,
+        "dependencies": [
+            224
+        ],
+        "bps": 80000000,
+        "total": 66023323,
+        "links": [
+            11
+        ],
+        "group_id": 19,
+        "collective_id": 4
+    },
+    "232": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44038,
+        "dependencies": [
+            225
+        ],
+        "bps": 80000000,
+        "total": 76029696,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 20,
+        "collective_id": 4
+    },
+    "233": {
+        "src": 6,
+        "dst": 1,
+        "src_port": 45038,
+        "dependencies": [
+            226
+        ],
+        "bps": 80000000,
+        "total": 73175500,
+        "links": [
+            8,
+            13
+        ],
+        "group_id": 21,
+        "collective_id": 4
+    },
+    "234": {
+        "src": 1,
+        "dst": 2,
+        "src_port": 40038,
+        "dependencies": [
+            227
+        ],
+        "bps": 80000000,
+        "total": 74349474,
+        "links": [
+            2
+        ],
+        "group_id": 22,
+        "collective_id": 4
+    },
+    "235": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41039,
+        "dependencies": [
+            234
+        ],
+        "bps": 80000000,
+        "total": 72427493,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 22,
+        "collective_id": 4
+    },
+    "236": {
+        "src": 3,
+        "dst": 4,
+        "src_port": 42039,
+        "dependencies": [
+            229
+        ],
+        "bps": 80000000,
+        "total": 65958745,
+        "links": [
+            3
+        ],
+        "group_id": 23,
+        "collective_id": 4
+    },
+    "237": {
+        "src": 4,
+        "dst": 5,
+        "src_port": 43039,
+        "dependencies": [
+            230
+        ],
+        "bps": 80000000,
+        "total": 68071735,
+        "links": [
+            11
+        ],
+        "group_id": 24,
+        "collective_id": 4
+    },
+    "238": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44039,
+        "dependencies": [
+            231
+        ],
+        "bps": 80000000,
+        "total": 71615555,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 19,
+        "collective_id": 4
+    },
+    "239": {
+        "src": 6,
+        "dst": 1,
+        "src_port": 45039,
+        "dependencies": [
+            232
+        ],
+        "bps": 80000000,
+        "total": 65633420,
+        "links": [
+            8,
+            13
+        ],
+        "group_id": 20,
+        "collective_id": 4
+    },
+    "240": {
+        "src": 1,
+        "dst": 2,
+        "src_port": 40039,
+        "dependencies": [
+            233
+        ],
+        "bps": 80000000,
+        "total": 72397177,
+        "links": [
+            2
+        ],
+        "group_id": 21,
+        "collective_id": 4
+    },
+    "241": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41040,
+        "dependencies": [
+            240
+        ],
+        "bps": 80000000,
+        "total": 69065069,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 21,
+        "collective_id": 4
+    },
+    "242": {
+        "src": 3,
+        "dst": 4,
+        "src_port": 42040,
+        "dependencies": [
+            235
+        ],
+        "bps": 80000000,
+        "total": 68594973,
+        "links": [
+            3
+        ],
+        "group_id": 22,
+        "collective_id": 4
+    },
+    "243": {
+        "src": 4,
+        "dst": 5,
+        "src_port": 43040,
+        "dependencies": [
+            236
+        ],
+        "bps": 80000000,
+        "total": 72390052,
+        "links": [
+            11
+        ],
+        "group_id": 23,
+        "collective_id": 4
+    },
+    "244": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44040,
+        "dependencies": [
+            237
+        ],
+        "bps": 80000000,
+        "total": 71457879,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 24,
+        "collective_id": 4
+    },
+    "245": {
+        "src": 6,
+        "dst": 1,
+        "src_port": 45040,
+        "dependencies": [
+            238
+        ],
+        "bps": 80000000,
+        "total": 68643398,
+        "links": [
+            8,
+            13
+        ],
+        "group_id": 19,
+        "collective_id": 4
+    },
+    "246": {
+        "src": 1,
+        "dst": 2,
+        "src_port": 40040,
+        "dependencies": [
+            239
+        ],
+        "bps": 80000000,
+        "total": 73957218,
+        "links": [
+            2
+        ],
+        "group_id": 20,
+        "collective_id": 4
+    },
+    "247": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41041,
+        "dependencies": [
+            246
+        ],
+        "bps": 80000000,
+        "total": 66126476,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 20,
+        "collective_id": 4
+    },
+    "248": {
+        "src": 3,
+        "dst": 4,
+        "src_port": 42041,
+        "dependencies": [
+            241
+        ],
+        "bps": 80000000,
+        "total": 72057918,
+        "links": [
+            3
+        ],
+        "group_id": 21,
+        "collective_id": 4
+    },
+    "249": {
+        "src": 4,
+        "dst": 5,
+        "src_port": 43041,
+        "dependencies": [
+            242
+        ],
+        "bps": 80000000,
+        "total": 71978106,
+        "links": [
+            11
+        ],
+        "group_id": 22,
+        "collective_id": 4
+    },
+    "250": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44041,
+        "dependencies": [
+            243
+        ],
+        "bps": 80000000,
+        "total": 68823123,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 23,
+        "collective_id": 4
+    },
+    "251": {
+        "src": 6,
+        "dst": 1,
+        "src_port": 45041,
+        "dependencies": [
+            244
+        ],
+        "bps": 80000000,
+        "total": 71044984,
+        "links": [
+            8,
+            13
+        ],
+        "group_id": 24,
+        "collective_id": 4
+    },
+    "252": {
+        "src": 1,
+        "dst": 2,
+        "src_port": 40041,
+        "dependencies": [
+            245
+        ],
+        "bps": 80000000,
+        "total": 65532108,
+        "links": [
+            2
+        ],
+        "group_id": 19,
+        "collective_id": 4
+    },
+    "253": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41042,
+        "dependencies": [
+            252
+        ],
+        "bps": 80000000,
+        "total": 73134775,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 19,
+        "collective_id": 4
+    },
+    "254": {
+        "src": 3,
+        "dst": 4,
+        "src_port": 42042,
+        "dependencies": [
+            247
+        ],
+        "bps": 80000000,
+        "total": 69258787,
+        "links": [
+            3
+        ],
+        "group_id": 20,
+        "collective_id": 4
+    },
+    "255": {
+        "src": 4,
+        "dst": 5,
+        "src_port": 43042,
+        "dependencies": [
+            248
+        ],
+        "bps": 80000000,
+        "total": 68078017,
+        "links": [
+            11
+        ],
+        "group_id": 21,
+        "collective_id": 4
+    },
+    "256": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44042,
+        "dependencies": [
+            249
+        ],
+        "bps": 80000000,
+        "total": 73571620,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 22,
+        "collective_id": 4
+    },
+    "257": {
+        "src": 6,
+        "dst": 1,
+        "src_port": 45042,
+        "dependencies": [
+            250
+        ],
+        "bps": 80000000,
+        "total": 67443207,
+        "links": [
+            8,
+            13
+        ],
+        "group_id": 23,
+        "collective_id": 4
+    },
+    "258": {
+        "src": 1,
+        "dst": 2,
+        "src_port": 40042,
+        "dependencies": [
+            251
+        ],
+        "bps": 80000000,
+        "total": 64982138,
+        "links": [
+            2
+        ],
+        "group_id": 24,
+        "collective_id": 4
+    },
+    "259": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41043,
+        "dependencies": [
+            258
+        ],
+        "bps": 80000000,
+        "total": 64464253,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 24,
+        "collective_id": 4
+    },
+    "260": {
+        "src": 3,
+        "dst": 4,
+        "src_port": 42043,
+        "dependencies": [
+            253
+        ],
+        "bps": 80000000,
+        "total": 72023225,
+        "links": [
+            3
+        ],
+        "group_id": 19,
+        "collective_id": 4
+    },
+    "261": {
+        "src": 4,
+        "dst": 5,
+        "src_port": 43043,
+        "dependencies": [
+            254
+        ],
+        "bps": 80000000,
+        "total": 65429642,
+        "links": [
+            11
+        ],
+        "group_id": 20,
+        "collective_id": 4
+    },
+    "262": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44043,
+        "dependencies": [
+            255
+        ],
+        "bps": 80000000,
+        "total": 76038517,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 21,
+        "collective_id": 4
+    },
+    "263": {
+        "src": 6,
+        "dst": 1,
+        "src_port": 45043,
+        "dependencies": [
+            256
+        ],
+        "bps": 80000000,
+        "total": 62628196,
+        "links": [
+            8,
+            13
+        ],
+        "group_id": 22,
+        "collective_id": 4
+    },
+    "264": {
+        "src": 1,
+        "dst": 2,
+        "src_port": 40043,
+        "dependencies": [
+            257
+        ],
+        "bps": 80000000,
+        "total": 75834611,
+        "links": [
+            2
+        ],
+        "group_id": 23,
+        "collective_id": 4
+    },
+    "265": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41044,
+        "dependencies": [
+            264
+        ],
+        "bps": 80000000,
+        "total": 70642626,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 23,
+        "collective_id": 4
+    },
+    "266": {
+        "src": 3,
+        "dst": 4,
+        "src_port": 42044,
+        "dependencies": [
+            259
+        ],
+        "bps": 80000000,
+        "total": 69567030,
+        "links": [
+            3
+        ],
+        "group_id": 24,
+        "collective_id": 4
+    },
+    "267": {
+        "src": 4,
+        "dst": 5,
+        "src_port": 43044,
+        "dependencies": [
+            260
+        ],
+        "bps": 80000000,
+        "total": 68000436,
+        "links": [
+            11
+        ],
+        "group_id": 19,
+        "collective_id": 4
+    },
+    "268": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44044,
+        "dependencies": [
+            261
+        ],
+        "bps": 80000000,
+        "total": 71300149,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 20,
+        "collective_id": 4
+    },
+    "269": {
+        "src": 6,
+        "dst": 1,
+        "src_port": 45044,
+        "dependencies": [
+            262
+        ],
+        "bps": 80000000,
+        "total": 69773524,
+        "links": [
+            8,
+            13
+        ],
+        "group_id": 21,
+        "collective_id": 4
+    },
+    "270": {
+        "src": 1,
+        "dst": 2,
+        "src_port": 40044,
+        "dependencies": [
+            263
+        ],
+        "bps": 80000000,
+        "total": 73761386,
+        "links": [
+            2
+        ],
+        "group_id": 22,
+        "collective_id": 4
+    },
+    "271": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41045,
+        "dependencies": [
+            270
+        ],
+        "bps": 80000000,
+        "total": 70304321,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 22,
+        "collective_id": 4
+    },
+    "272": {
+        "src": 3,
+        "dst": 4,
+        "src_port": 42045,
+        "dependencies": [
+            265
+        ],
+        "bps": 80000000,
+        "total": 70430409,
+        "links": [
+            3
+        ],
+        "group_id": 23,
+        "collective_id": 4
+    },
+    "273": {
+        "src": 4,
+        "dst": 5,
+        "src_port": 43045,
+        "dependencies": [
+            266
+        ],
+        "bps": 80000000,
+        "total": 68634150,
+        "links": [
+            11
+        ],
+        "group_id": 24,
+        "collective_id": 4
+    },
+    "274": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44045,
+        "dependencies": [
+            267
+        ],
+        "bps": 80000000,
+        "total": 69706027,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 19,
+        "collective_id": 4
+    },
+    "275": {
+        "src": 6,
+        "dst": 1,
+        "src_port": 45045,
+        "dependencies": [
+            268
+        ],
+        "bps": 80000000,
+        "total": 70980912,
+        "links": [
+            8,
+            13
+        ],
+        "group_id": 20,
+        "collective_id": 4
+    },
+    "276": {
+        "src": 1,
+        "dst": 2,
+        "src_port": 40045,
+        "dependencies": [
+            269
+        ],
+        "bps": 80000000,
+        "total": 63927595,
+        "links": [
+            2
+        ],
+        "group_id": 21,
+        "collective_id": 4
+    },
+    "277": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41046,
+        "dependencies": [
+            276
+        ],
+        "bps": 80000000,
+        "total": 65192817,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 21,
+        "collective_id": 4
+    },
+    "278": {
+        "src": 3,
+        "dst": 4,
+        "src_port": 42046,
+        "dependencies": [
+            271
+        ],
+        "bps": 80000000,
+        "total": 72502963,
+        "links": [
+            3
+        ],
+        "group_id": 22,
+        "collective_id": 4
+    },
+    "279": {
+        "src": 4,
+        "dst": 5,
+        "src_port": 43046,
+        "dependencies": [
+            272
+        ],
+        "bps": 80000000,
+        "total": 70502285,
+        "links": [
+            11
+        ],
+        "group_id": 23,
+        "collective_id": 4
+    },
+    "280": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44046,
+        "dependencies": [
+            273
+        ],
+        "bps": 80000000,
+        "total": 69261998,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 24,
+        "collective_id": 4
+    },
+    "281": {
+        "src": 6,
+        "dst": 1,
+        "src_port": 45046,
+        "dependencies": [
+            274
+        ],
+        "bps": 80000000,
+        "total": 69969498,
+        "links": [
+            8,
+            13
+        ],
+        "group_id": 19,
+        "collective_id": 4
+    },
+    "282": {
+        "src": 1,
+        "dst": 2,
+        "src_port": 40046,
+        "dependencies": [
+            275
+        ],
+        "bps": 80000000,
+        "total": 71119953,
+        "links": [
+            2
+        ],
+        "group_id": 20,
+        "collective_id": 4
+    },
+    "283": {
+        "src": 2,
+        "dst": 3,
+        "src_port": 41047,
+        "dependencies": [
+            282
+        ],
+        "bps": 80000000,
+        "total": 68018470,
+        "links": [
+            1,
+            5
+        ],
+        "group_id": 20,
+        "collective_id": 4
+    },
+    "284": {
+        "src": 3,
+        "dst": 4,
+        "src_port": 42047,
+        "dependencies": [
+            277
+        ],
+        "bps": 80000000,
+        "total": 67184694,
+        "links": [
+            3
+        ],
+        "group_id": 21,
+        "collective_id": 4
+    },
+    "285": {
+        "src": 4,
+        "dst": 5,
+        "src_port": 43047,
+        "dependencies": [
+            278
+        ],
+        "bps": 80000000,
+        "total": 70589595,
+        "links": [
+            11
+        ],
+        "group_id": 22,
+        "collective_id": 4
+    },
+    "286": {
+        "src": 5,
+        "dst": 6,
+        "src_port": 44047,
+        "dependencies": [
+            279
+        ],
+        "bps": 80000000,
+        "total": 66485406,
+        "links": [
+            6,
+            7
+        ],
+        "group_id": 23,
+        "collective_id": 4
+    },
+    "287": {
+        "src": 6,
+        "dst": 1,
+        "src_port": 45047,
+        "dependencies": [
+            280
+        ],
+        "bps": 80000000,
+        "total": 71332013,
+        "links": [
+            8,
+            13
+        ],
+        "group_id": 24,
+        "collective_id": 4
+    },
+    "288": {
+        "src": 1,
+        "dst": 2,
+        "src_port": 40047,
+        "dependencies": [
+            281
+        ],
+        "bps": 80000000,
+        "total": 63954106,
+        "links": [
+            2
+        ],
+        "group_id": 19,
+        "collective_id": 4
+    }
+}
