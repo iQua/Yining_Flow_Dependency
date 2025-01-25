@@ -66,7 +66,7 @@ def flow_chunk_optimization(
         num_part = math.ceil(flow_datas[flow_idx]/get_bottleneck_link_capacity(fl_s_holder, flow_idx))
         edge_record[(k, n, source_link, dest_link, order)] = fl_s_holder.f2l_mapper[f"{k}-{n}-{flow_idx + 1}"]
 
-    for flow_idx, flow in enumerate(fcg_holder.matrix):
+    for flow_idx, flow in enumerate(fcg_holder.matrix): #array([[1, 1, 0], [1, 2, 0], [1, 2, 1],[2, 3, 0]]))
         k = flow[0]
         n = flow[1]
         order = flow[2]
@@ -99,29 +99,32 @@ def flow_chunk_optimization(
         if p == 1:
             current_record = x_var # 记录一下当前时间的x_var
         if p >= 2:
-            constraints.append(x_var >= current_record + 1) # 新的时刻（下一秒）一定大于上一秒那块流被发送的时刻
+            constraints.append(x_var == current_record + 1) # 新的时刻（下一秒）一定大于上一秒那块流被发送的时刻：>= or =?流一定要连着嘛
             current_record = x_var
-        b = cp.Variable(boolean=True) # link constraints
-        M = 100000
+        # b = cp.Variable(boolean=True) # link constraints
+        b = [cp.Variable(boolean=True) for _ in range(100)]
+        M = 1000
+        count = 0
         if (k, n, i, j, o) in link_constraint_check_list:
             if link_constraint_check_list[(k, n, i, j, o)] != []:
                 #print(f"x var now is:{x_var}")
                 for var in link_constraint_check_list[(k, n, i, j, o)]:
                     #print(f"each var:{var}")
-                    constraints.append((x_var - x[var]) >= 1 - M*(1-b))
-                    constraints.append((x_var - x[var]) <= -1 + M*b)
+                    constraints.append((x_var - x[var]) >= 1 - M*(1-b[count]))
+                    constraints.append((x_var - x[var]) <= -1 + M*b[count])
+                    count += 1
+
         if o == 0:
             current_order = 0
             current_k, current_n = k, n
-            current_dependency_var = x[(k, n, i, j, o, p)] #Dependence constraint: 0先走 1后走
-            # current_dependency_var = x[(k, n, i, j, o, 1)] #Dependence constraint: 1先走 0后走
+            # current_dependency_var = x[(k, n, i, j, o, p)] #Dependence constraint: 0先走 1后走
+            current_dependency_var = x[(k, n, i, j, o, 1)] #Dependence constraint: 1先走 0后走
 
         if o > current_order:
-            print("now k,n,i,j,p:", (k,n,i,j,o,p))
+            #print("now k,n,i,j,p:", (k,n,i,j,o,p))
             if k == current_k and n == current_n:
-                constraints.append(x_var >= current_dependency_var + 1) # Dependence constraint: 0先走1后走
-                #print(current_dependency_var, x_var)
-                # constraints.append(x_var + 1 <= current_dependency_var) # Dependence constraint, 1先走0后走
+                # constraints.append(x_var >= current_dependency_var + 1) # Dependence constraint: 0先走1后走
+                constraints.append(x_var + 1 <= current_dependency_var) # Dependence constraint, 1先走0后走
 
                 if (k, n, i, j, o, p+1) not in x:
                     current_order = o
@@ -134,10 +137,13 @@ def flow_chunk_optimization(
     solver_name = opt_config.get("solver", "HIGHS")  # 可以换成"CBC"或者"GLPK_MI"啥的(?
     # prob.solve(solver=solver_name)
     prob.solve()
-    if prob.status == cp.OPTIMAL:
-        print("\n========= 变量解 =========")
-    for (k, n, i, j, o, p), var in x.items():
-        print(f"Flow(k={k}, n={n}, order={o}, part={p}) 开始时间: {var.value:.1f}")
+    # print("b values:", [b_i.value for b_i in b])
+
+    # if prob.status == cp.OPTIMAL:
+    #     print("\n========= Var Values =========")
+    # for (k, n, i, j, o, p), var in x.items():
+    #     print((k, n, i, j, o, p))
+    #     print(f"Flow(k={k}, n={n}, order={o}, part={p}) 开始时间: {var.value:.1f}")
     objective_value = prob.value / K
     end_time = time.time()
     time_cost = end_time - start_time
