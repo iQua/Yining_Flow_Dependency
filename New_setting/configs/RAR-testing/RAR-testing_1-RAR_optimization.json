@@ -1,0 +1,7 @@
+{
+    "T": 200,
+    "segment_base": 2,
+    "is_segment": "True",
+    "small_lambda": 0.2,
+    "jump_range": 20
+}
