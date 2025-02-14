@@ -12,7 +12,7 @@ import time
 from utils import save_alloc_solutions
 from opt_utils import get_group_flows
 
-def get_bottleneck_link_capacity(link_set, link_cap): # 找到bottleneck link的capacity
+def get_bottleneck_link_capacity(link_set, link_cap): # find bottleneck link capacity
     # print(f"link set is:{link_set}")
     min_key, bottleneck = min(((str(key), link_cap[str(key)]) for key in link_set), key=lambda x: x[1])
     if not bottleneck:
@@ -36,7 +36,6 @@ def find_candidate_last_key(x_dict):
     """
     candidate_key = max(x_dict.keys(), key=lambda k: k[6])
     return candidate_key
-
 
 def flow_chunk_optimization(flow_info, link_cap, depency_order):
     start_time = time.time()
@@ -63,9 +62,7 @@ def flow_chunk_optimization(flow_info, link_cap, depency_order):
                 x_record[flow_id] = {}
             key_tuple = (flow_id, k, n, source, dest, order, part)
             x_record[flow_id].setdefault(key_tuple, []).append(x[(flow_id, k, n, source, dest, order, part)])
-
             # constraints.append(x[(k, n, source, dest, order, part)] >= 1)
-
 
     # Objective function: min sum(T_k), where T_k >=X(k, n, i, j, o, p) for all n, i, j, o, p
     T = {} # Construct a set of helper variables (T_k >= The time we send the last part of the flow in collective k)
@@ -78,13 +75,11 @@ def flow_chunk_optimization(flow_info, link_cap, depency_order):
     for (fid, k, n, i, j, o, p), x_var in x.items(): # (1 1 1 4 0 0): k, n, i, j, o, t
         constraints.append(x_var >= 1) # sending completion constraint (trivial)
         constraints.append(T[k] >= x_var) # helper for objective function
-
         # if p == 1:
         #     current_record = x_var # record x_var at current time
         if p >= 2:
             prev_var = x[(fid, k, n, i, j, o, p-1)]
-            constraints.append(x_var == prev_var + 1) # 新的时刻（下一秒）一定大于上一秒那块流被发送的时刻：>= or =?流一定要连着嘛
-
+            constraints.append(x_var == prev_var + 1) # the time we send a larger part should be later than the time we send a previous part：>= or =? must be consecutive(?)
 
     # Dependency Constraints: first part of the current flow should be later than the last part of the previous flow
     for flow_id, flow in flow_info.items():
@@ -114,6 +109,7 @@ def flow_chunk_optimization(flow_info, link_cap, depency_order):
     #         constraints.append((x_record[fid][0] - x_record[flow][0]) <= -1 + M*b[count])
     #         count += 1
 
+    # Non-concurrent Constraints
     edge_record = get_flows_with_same_links(flow_info)
     M = 1000  
     for fid, other_list in edge_record.items():
@@ -137,12 +133,12 @@ def flow_chunk_optimization(flow_info, link_cap, depency_order):
             constraints.append(i_finish + 1 <= j_start + M*(1 - b))
             constraints.append(j_finish + 1 <= i_start + M*b)
 
-    objective = cp.Minimize(cp.sum([T[k] for k in range(1, K+1)])) # minimize所有collective的完成时间
+    objective = cp.Minimize(cp.sum([T[k] for k in range(1, K+1)])) # minimize the completion time of all collectives
     
     # Solve
     prob = cp.Problem(objective, constraints)
     logging.info("-----> Building MILP for chunk-based scheduling done, start solving...")
-    #solver_name = opt_config.get("solver", "HIGHS")  # 可以换成"CBC"或者"GLPK_MI"啥的(?
+    #solver_name = opt_config.get("solver", "HIGHS")  # can change to "CBC"or "GLPK_MI"(?
     # prob.solve(solver=solver_name)
     prob.solve()
     # print("b values:", [b_i.value for b_i in b])
