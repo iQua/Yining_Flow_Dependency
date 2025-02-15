@@ -35,13 +35,7 @@ def _main():
     parser.add_argument(
         "-c", "--config", type=str, required=True, help="Path to config file"
     )
-    parser.add_argument(
-        "-o",
-        "--optconfig",
-        type=str,
-        required=True,
-        help="Path to config file for the optimization",
-    )
+
     parser.add_argument(
         "-p",
         "--project",
@@ -67,33 +61,29 @@ def _main():
     result_path = args.results
     proj_name = args.project
     config_name = args.config
-    optconfig_name = args.optconfig
+    # optconfig_name = args.optconfig
     method_name = args.method
 
     # Extract the basic settings
     config_folder_path = os.path.join(base_path, config_foldername)
-    optconfig_path = os.path.join(base_path, config_foldername, optconfig_name)
+    optconfig_path = os.path.join(base_path, config_foldername) #, optconfig_name)
     info = extract_information(config_folder_path, config_name)
 
     flow_info = get_flow_info(info) # flow info in the order of each flow
     link_cap = info.get("link_capacities") # link capacities
-    depency_order = get_dependency_order(flow_info) # dep orders, e.g. {(1, 1): ['1'], (1, 2): ['3', '2'], (2, 3): ['4']}
-
-    if method_name == "flowChunk":
-        print(flow_chunk_optimization(flow_info, link_cap, depency_order))
-    
-    exit()
-    # Extract the config for the optimization
-    with open(optconfig_path, "r", encoding="utf-8") as f:
-        opt_parameters = json.load(f)
-    print(opt_parameters)
-
+    dependency_order = get_dependency_order(flow_info) # dep orders, e.g. {(1, 1): ['1'], (1, 2): ['3', '2'], (2, 3): ['4']}
 
     project_path = os.path.join(result_path, proj_name, method_name)
-    opt_parameters["model_path"] = project_path
-    os.makedirs(opt_parameters["model_path"], exist_ok=True)
+    os.makedirs(project_path, exist_ok = True)  #./new/toyExample/flowChunk
+    if method_name == "flowChunk":
+        result = flow_chunk_optimization(flow_info, link_cap, dependency_order)
+
+    output_file = os.path.join(project_path, "result.json")
+    with open(output_file, "w", encoding="utf-8") as f:
+        json.dump(result, f, indent=4)
 
 
+    logging.info("%s %s Done.", "*" * 15, proj_name)
 
 if __name__ == "__main__":
     _main()
