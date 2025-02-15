@@ -82,7 +82,6 @@ def _main():
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(result, f, indent=4)
 
-
     logging.info("%s %s Done.", "*" * 15, proj_name)
 
 if __name__ == "__main__":
