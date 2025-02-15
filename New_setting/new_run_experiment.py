@@ -1,5 +1,5 @@
 """
-A session to run the experiments of the paper.
+A session to run the idea(s) on new setting
 """
 
 import os
