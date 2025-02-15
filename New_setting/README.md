@@ -31,7 +31,7 @@ For example, if we run
 $ python new_run_experiment.py -r ./new -c toy_example.json -p toyExample -m flowChunk
 ```
 The results (optimal solution and time cost) will be saved at `./new/toyExample/flowChunk/result.json`. The detailed variable values will also be displayed at terminal, like follows:
-| Flow id | k | n | Order | Param | Extra | Part | Arriving Time |
+| Flow id | Collective | Group | Source | Destination | Order | Part | Arriving Time |
 |:-----:|:-:|:-:|:-----:|:-----:|:-----:|:----:|:-------------:|
 | 1     | 1 | 1 | 1     | 10    | 1     | 1    | 1.0           |
 | 1     | 1 | 1 | 1     | 10    | 1     | 2    | 2.0           |
