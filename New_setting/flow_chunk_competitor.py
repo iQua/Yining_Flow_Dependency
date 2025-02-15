@@ -31,10 +31,11 @@ def flow_chunk_optimization(
     opt_config: dict,
 ):
     """
-    将每个流拆成若干块：
-      1. 每条流(k,n,i,j) 的数据量 F(k,n,i,j) 被拆成数据量/bottleneck流量个parts
-      2. 同一流的块 p 必须在块 p-1 完成之后才能发送
-      3. Objective：最小化各 collective 的average completion time
+    Divide each flow into several parts
+      1. Each F(k,n,i,j) will be divided into datasize/bottleneck parts
+      2. X(k,n,i,j,o,p) > X(k,n,i,j,o,p-1)
+      3. Dependency constraints
+      4. Link constraints
     """
     start_time = time.time()
     logging.info("**** Start Flow Chunk Optimization ****")
@@ -42,14 +43,14 @@ def flow_chunk_optimization(
     os.makedirs(save_path, exist_ok=True)
 
     # 1 Basic settings
-    K = cg_container.K             # collective 数量
-    Nks = cg_container.Nks         # 每个 collective 的 group 数量
-    F = fl_s_holder.fl_holder.F    # 流的总数 (原始 flow)
-    E = fl_s_holder.fl_holder.E    # link数量
+    K = cg_container.K             # Number of collective
+    Nks = cg_container.Nks         # Number of groups
+    F = fl_s_holder.fl_holder.F    # Total number of flows
+    E = fl_s_holder.fl_holder.E    # Number of links
     flow_objs = flow_container.item_objs
     link_objs = link_container.item_objs
 
-    # 2. 设定vars: X(k,n,i,j,o,t)
+    # 2. Create vars: X(k,n,i,j,o,t)
     x = {}
     f2l = fl_s_holder.fl_holder.f2l_mapper
     flow_datas = np.array([flow.data_volume for flow in flow_objs]) #[150  50  50 100]
@@ -73,27 +74,27 @@ def flow_chunk_optimization(
         flow_key = fl_s_holder.fl_holder.flow_ids[flow_idx]
         source_link, dest_link = f2l[flow_key][0], f2l[flow_key][-1]
         num_part = math.ceil(flow_datas[flow_idx]/get_bottleneck_link_capacity(fl_s_holder, flow_idx))
-        key1 = (k, n, source_link, dest_link, order) #当前的key
+        key1 = (k, n, source_link, dest_link, order) #Current key
         # edge_record[key1] = fl_s_holder.f2l_mapper[f"{k}-{n}-{flow_idx + 1}"]
         for part in range(1, int(num_part) + 1):
             x[(k, n, source_link, dest_link, order, part)] = cp.Variable(nonneg=True, name=f"x_k{k}_n{n}_i{source_link}_j{dest_link}_o{order}_p{part}")
-            for key2 in edge_record: #check其他的flow有没有和当前flow有一样的edge
+            for key2 in edge_record: #check if the other flows have the same linke with the current flow
                 if key1 != key2:
                     common_elements = set(edge_record[key1]) & set(edge_record[key2])
                     if common_elements:
                         #print(f"key1:{key1},key2:{key2}")
                         if key2 not in link_constraint_check_list:
-                            # link_constraint_check_list.setdefault(key2, set()).add(key1 + (part,))  # 用集合避免重复
+                            # link_constraint_check_list.setdefault(key2, set()).add(key1 + (part,)) 
                             link_constraint_check_list[key2] = []
                             link_constraint_check_list[key2].append(key1 + (part,))
                         else:
-                            # link_constraint_check_list.setdefault(key2, set()).add(key1 + (part,))  # 用集合避免重复
+                            # link_constraint_check_list.setdefault(key2, set()).add(key1 + (part,))
                             link_constraint_check_list[key2].append(key1 + (part,))
     # print(link_constraint_check_list)
 
     #print(f"x example:{x[(1,1,1,4,0,1)]}")
     # 3. Objective function: min sum(T_k), where T_k >=X(k, n, i, j , p) for all n, i, j, p
-    T = {} # Construct a set of helper variables (T_k >= 第k个collective里最后被发出去的流的时间)
+    T = {} # Construct a set of helper variables (T_k >= The time we send the last flow in collective k)
     for k_idx in range(K):
         T[k_idx + 1] = cp.Variable(nonneg=True, name=f"T_k{k_idx + 1}")
     current_k, current_n, current_order = 0, 0, 0 # just initialize
@@ -104,7 +105,7 @@ def flow_chunk_optimization(
         #     current_record = x_var # 记录一下当前时间的x_var
         if p >= 2:
             prev_var = x[(k, n, i, j, o, p-1)]
-            constraints.append(x_var == prev_var + 1) # 新的时刻（下一秒）一定大于上一秒那块流被发送的时刻：>= or =?流一定要连着嘛
+            constraints.append(x_var == prev_var + 1) 
             # current_record = x_var
         b = [cp.Variable(boolean=True) for _ in range(100)]
         M = 1000
@@ -121,24 +122,24 @@ def flow_chunk_optimization(
         if o == 0:
             current_order = 0
             current_k, current_n = k, n
-            # current_dependency_var = x[(k, n, i, j, o, p)] #Dependence constraint: 0先走 1后走
-            current_dependency_var = x[(k, n, i, j, o, 1)] #Dependence constraint: 1先走 0后走
+            # current_dependency_var = x[(k, n, i, j, o, p)] #Dependence constraint: 0 first 1 later
+            current_dependency_var = x[(k, n, i, j, o, 1)] #Dependence constraint: 1 first 0 later
 
         if o > current_order:
             #print("now k,n,i,j,p:", (k,n,i,j,o,p))
             if k == current_k and n == current_n:
-                # constraints.append(x_var >= current_dependency_var + 1) # Dependence constraint: 0先走1后走
-                constraints.append(x_var + 1 <= current_dependency_var) # Dependence constraint, 1先走0后走
+                # constraints.append(x_var >= current_dependency_var + 1) # Dependence constraint: 0 first 1 later
+                constraints.append(x_var + 1 <= current_dependency_var) # Dependence constraint, 1 first 0 later
 
                 if (k, n, i, j, o, p+1) not in x:
                     current_order = o
 
-    objective = cp.Minimize(cp.sum([T[k] for k in range(1, K+1)])) # minimize所有collective的完成时间
+    objective = cp.Minimize(cp.sum([T[k] for k in range(1, K+1)])) # minimize the completion time of all collectives
 
     # Solve
     prob = cp.Problem(objective, constraints)
     logging.info("-----> Building MILP for chunk-based scheduling done, start solving...")
-    solver_name = opt_config.get("solver", "HIGHS")  # 可以换成"CBC"或者"GLPK_MI"啥的(?
+    # solver_name = opt_config.get("solver", "HIGHS") 
     # prob.solve(solver=solver_name)
     prob.solve()
     # print("b values:", [b_i.value for b_i in b])
@@ -147,7 +148,7 @@ def flow_chunk_optimization(
         print("\n========= Var Values =========")
     for (k, n, i, j, o, p), var in x.items():
         print((k, n, i, j, o, p))
-        print(f"Flow(k={k}, n={n}, order={o}, part={p}) Starting time: {var.value:.1f}")
+        print(f"Flow(k={k}, n={n}, order={o}, part={p}) Arriving time: {var.value:.1f}")
     objective_value = prob.value / K
     end_time = time.time()
     time_cost = end_time - start_time
