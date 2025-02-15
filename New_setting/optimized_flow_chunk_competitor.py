@@ -19,16 +19,19 @@ def get_bottleneck_link_capacity(link_set, link_cap): # find bottleneck link cap
         return 0
     return bottleneck/1024/1024/8
 
-def get_flows_with_same_links(flow_info): # for a non-concurrent setting
+def get_flows_with_same_links(flow_info):  # for a non-concurrent setting
     edge_record = {}
     for idx_i, flow_i in flow_info.items():
         for idx_j, flow_j in flow_info.items():
-            if idx_i < idx_j: # only check once
+            if idx_i < idx_j:  # only check once
                 common_links = flow_i['links'] & flow_j['links']
                 if common_links:
-                    print(idx_i, idx_j)
-                    edge_record[idx_i] = idx_j
+                    # print(idx_i, idx_j)
+                    # edge_record[idx_i] = idx_j
+                    edge_record.setdefault(idx_i, []).append(idx_j)
     return edge_record
+
+
 
 def find_candidate_last_key(x_dict):
     """
@@ -147,7 +150,7 @@ def flow_chunk_optimization(flow_info, link_cap, depency_order):
         print("\n========= Var Values =========")
     for (fid, k, n, i, j, o, p), var in x.items():
         print((fid, k, n, i, j, o, p))
-        print(f"Flow(k={k}, n={n}, order={o}, part={p}) Starting time: {var.value:.1f}")
+        print(f"Flow(k={k}, n={n}, order={o}, part={p}) Arriving time: {var.value:.1f}")
     objective_value = prob.value / K
     end_time = time.time()
     time_cost = end_time - start_time
