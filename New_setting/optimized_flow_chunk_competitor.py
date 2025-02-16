@@ -12,7 +12,10 @@ import time
 from utils import save_alloc_solutions
 from opt_utils import get_group_flows
 
-def get_bottleneck_link_capacity(link_set, link_cap): # find bottleneck link capacity
+def get_bottleneck_link_capacity(link_set, link_cap): 
+    """
+    Get a specific flow's bottleneck link capacity
+    """
     # print(f"link set is:{link_set}")
     min_key, bottleneck = min(((str(key), link_cap[str(key)]) for key in link_set), key=lambda x: x[1])
     if not bottleneck:
@@ -20,27 +23,28 @@ def get_bottleneck_link_capacity(link_set, link_cap): # find bottleneck link cap
     return bottleneck/1024/1024/8
 
 def get_flows_with_same_links(flow_info):  # for a non-concurrent setting
+    """
+    Get a dict of the flows that share a same link
+    """
     edge_record = {}
-    for idx_i, flow_i in flow_info.items():
-        for idx_j, flow_j in flow_info.items():
+    for idx_i, flow_info_i in flow_info.items():
+        for idx_j, flow_info_j in flow_info.items():
             if idx_i < idx_j:  # only check once
-                common_links = flow_i['links'] & flow_j['links']
+                common_links = flow_info_i['links'] & flow_info_j['links']
                 if common_links:
                     # print(idx_i, idx_j)
-                    # edge_record[idx_i] = idx_j
                     edge_record.setdefault(idx_i, []).append(idx_j)
     return edge_record
 
 
-
 def find_candidate_last_key(x_dict):
     """
-    find the time variable that we send the last part of a flow
+    Find the time variable that we send the last part of a flow
     """
     candidate_key = max(x_dict.keys(), key=lambda k: k[6])
     return candidate_key
 
-def flow_chunk_optimization(flow_info, link_cap, depency_order):
+def flow_chunk_optimization(flow_info, link_cap, depency_order, fid_to_order_dict):
     start_time = time.time()
     logging.info('**** Start Flow Chunk Optimization ****')
     last_key = next(reversed(flow_info))
@@ -57,7 +61,8 @@ def flow_chunk_optimization(flow_info, link_cap, depency_order):
         n = flow['group']
         source = flow['source']
         dest = flow['dest']
-        order = depency_order[(k,n)].index(flow_id) + 1
+        order = fid_to_order_dict[flow_id][0]
+        # order = depency_order[(k,n)].index(flow_id) + 1
         # print(f"flow:{flow}, order:{order}")
         for part in range(1, num_part + 1):
             x[(flow_id, k, n, source, dest, order, part)] = cp.Variable(nonneg = True, name = f"x_fid_{flow_id}_k{k}_n{n}_i{source}_j{dest}_o{order}_p{part}")
@@ -69,7 +74,6 @@ def flow_chunk_optimization(flow_info, link_cap, depency_order):
 
     # Objective function: min sum(T_k), where T_k >=X(k, n, i, j, o, p) for all n, i, j, o, p
     T = {} # Construct a set of helper variables (T_k >= The time we send the last part of the flow in collective k)
-    edge_record = get_flows_with_same_links(flow_info) # Non-concurrent constraints
 
     for k_idx in range(K):
         T[k_idx + 1] = cp.Variable(nonneg=True, name=f"T_k{k_idx + 1}")
@@ -88,7 +92,8 @@ def flow_chunk_optimization(flow_info, link_cap, depency_order):
     for flow_id, flow in flow_info.items():
         k = flow['collective']
         n = flow['group']
-        order = depency_order[(k,n)].index(flow_id) + 1
+        order = fid_to_order_dict[flow_id][0]
+        # order = depency_order[(k,n)].index(flow_id) + 1
         # flow['dependency_order'] = order
         if order > 1: 
             k = flow['collective']
