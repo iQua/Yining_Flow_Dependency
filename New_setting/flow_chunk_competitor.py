@@ -16,7 +16,7 @@ from generic import (
 from utils import save_alloc_solutions
 from opt_utils import get_group_flows
 
-def get_bottleneck_link_capacity(fl_s_holder: FlowLinkSendHolder, flow_idx): # 找到bottleneck link的capacity
+def get_bottleneck_link_capacity(fl_s_holder: FlowLinkSendHolder, flow_idx): # get bottleneck link capacity
     link_capacity = min([c for c in fl_s_holder.capacity_matrix[flow_idx] if c!=0])
     if not link_capacity:
         return 0
