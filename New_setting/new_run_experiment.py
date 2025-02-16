@@ -72,11 +72,13 @@ def _main():
     flow_info = get_flow_info(info) # flow info in the order of each flow
     link_cap = info.get("link_capacities") # link capacities
     dependency_order = get_dependency_order(flow_info) # dep orders, e.g. {(1, 1): ['1'], (1, 2): ['3', '2'], (2, 3): ['4']}
+    fid_to_order_dict = fid_to_order(dependency_order)
 
     project_path = os.path.join(result_path, proj_name, method_name)
     os.makedirs(project_path, exist_ok = True)  #./new/toyExample/flowChunk
+
     if method_name == "flowChunk":
-        result = flow_chunk_optimization(flow_info, link_cap, dependency_order)
+        result = flow_chunk_optimization(flow_info, link_cap, dependency_order, fid_to_order_dict)
 
     output_file = os.path.join(project_path, "result.json")
     with open(output_file, "w", encoding="utf-8") as f:
