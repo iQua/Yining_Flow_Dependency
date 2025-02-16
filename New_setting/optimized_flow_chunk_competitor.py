@@ -44,7 +44,7 @@ def find_candidate_last_key(x_dict):
     candidate_key = max(x_dict.keys(), key=lambda k: k[6])
     return candidate_key
 
-def flow_chunk_optimization(flow_info, link_cap, depency_order, fid_to_order_dict):
+def flow_chunk_optimization(flow_info, link_cap, dependency_order, fid_to_order_dict):
     start_time = time.time()
     logging.info('**** Start Flow Chunk Optimization ****')
     last_key = next(reversed(flow_info))
@@ -100,7 +100,7 @@ def flow_chunk_optimization(flow_info, link_cap, depency_order, fid_to_order_dic
             n = flow['group']
             source = flow['source']
             dest = flow['dest']
-            prev_flow_id = depency_order[(k, n)][order - 2] # get id of the last flow based on depency_order
+            prev_flow_id = dependency_order[(k, n)][order - 2] # get id of the last flow based on depency_order
             candidate_key = find_candidate_last_key(x_record[prev_flow_id]) # find the last part of the flow as a key from the previous flow
             current_key = (flow_id, k, n, source, dest, order, 1)
             constraints.append(x[current_key] >= x[candidate_key] + 1)
