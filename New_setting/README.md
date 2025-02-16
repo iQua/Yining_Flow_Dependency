@@ -2,7 +2,7 @@
 # How to run the code
 
 ## Newly added files
-- `new_setting.py`: The new flow setting that parse all the flow information into three dictionaries. Also, dfs was used to directly get the dependency orders within a flow group. This is a replacement of `generic.py` in the original code.
+- `new_setting.py`: The new flow setting that parse all the flow information into three dictionaries. This is a replacement of `generic.py` in the original code.
 
 - `new_run_experiment.py`: A simplified version of run_experiment.py, which only contains the new idea.
 
